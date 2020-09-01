@@ -19,11 +19,13 @@ export const LoginPage = () => {
                     <input type="password" />
                     <label for="password">Passwort</label>
                 </div>
-                <Link to="/forgotpassword">Passwort vergessen?</Link>
+                <Link className="login-links" to="/forgotpassword">Passwort vergessen?</Link>
                 
                 <div className="input-field">
                     <input type="submit" value="Anmelden"/>
                 </div>
+
+                <Link className="login-links text-center" to="/register">Konto erstellen</Link>
             </form>
             </div>
             
