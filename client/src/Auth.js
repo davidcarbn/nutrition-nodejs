@@ -16,7 +16,7 @@ class Auth extends React.Component {
     async initialLogin(email, password) {
         // call api
         try {
-            const response = await fetch('localhost:3000/api/v1/auth', {
+            const response = await fetch('nutrition-nodejs.herokuapp.com:3000/api/v1/auth', {
                 method: 'POST',
                 mode: 'cors',
                 body: JSON.stringify({
