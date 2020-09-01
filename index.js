@@ -1,7 +1,7 @@
 import express from 'express'
 
 const app = express()
-const port = 3000
+const port = prccess.env.PORT || 3000
 
 app.get('/test', async (req,res) => {
     res.send('tests')    
