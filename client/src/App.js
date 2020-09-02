@@ -12,7 +12,7 @@ function App() {
   useEffect(() => {
     const checkLogin = async () => {
       try {
-        const res = await Axios.get('localhost:3000/api/v1/auth')
+        const res = await Axios.get('/api/v1/auth')
         console.log(res)
       } catch (error) {
         console.log(error)
