@@ -18,6 +18,7 @@ const login = async (req,res) => {
         console.log(req.body    )
         // validation
         const user = await User.findOne({email:email})
+        console.log(user)
         const match = await compare(password, user.password)
         if (!match) {
             res.status(401)
