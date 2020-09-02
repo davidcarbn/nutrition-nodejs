@@ -9,6 +9,7 @@ export const LoginPage = () => {
     const { isAuthenticated, setIsAuthenticated} = useAuth();
     const history = useHistory()
     const login = async (event) => {
+        event.preventDefault()
         try {
             const res = await Axios.request('/api/v1/auth',{
                 method: "POST",

@@ -15,7 +15,7 @@ const checkStatus = async (req,res) => {
 const login = async (req,res) => {
     try {
         const {email,password} = req.body
-        console.log(req.body)
+        console.log(req.body    )
         // validation
         const user = await User.findOne({email})
         const match = await compare(password, user.password)
@@ -25,7 +25,11 @@ const login = async (req,res) => {
         }
         const accessToken = await signToken({id:user.id},{expiresIn: 60*60})
         console.log(accessToken)
-        res.cookie('accessToken',accessToken, {maxAge:900000,httpOnly:true})
+        res.cookie('accessToken',accessToken, {
+            maxAge:900000,
+            httpOnly: process.env.DEV ? false : true,
+            secure:  process.env.DEV ? false : true,
+        })
         res.status(200).json({user})
     } catch (error) {
         console.log(error)
