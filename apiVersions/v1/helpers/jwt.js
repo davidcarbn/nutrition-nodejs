@@ -11,3 +11,14 @@ export const signToken = (payload,options) => {
         })
     })
 }
+export const verifyToken = (token,options) => {
+    return new Promise((resolve,reject) => {
+        jwt.verify(token,process.env.JWT_SECRET,options, (err,decoded) => {
+            if (err) {
+                reject(err)
+                return
+            }
+            resolve(decoded)
+        })
+    })
+}

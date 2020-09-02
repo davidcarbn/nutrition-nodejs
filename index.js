@@ -5,16 +5,16 @@ import dbConnect from './services/db'
 import bodyParser from 'body-parser'
 import cookieParser from 'cookie-parser'
 import cors from 'cors'
-
 const app = express()
 const port = process.env.PORT || 3000
+
 app.use(express.static(path.join(__dirname, 'client/build')))
 app.use(cors())
 app.use(bodyParser())
 app.use(cookieParser())
 
 app.use('/api/v1',v1)
-
+app.get('/',(req,res)=> res.send('test'))
 app.get('*',(req,res) => {
     res.sendFile(path.join(__dirname+'/client/build/index.html'))
 })

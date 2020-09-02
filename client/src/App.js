@@ -1,20 +1,32 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
 import { Route, Switch } from 'react-router-dom'
 import { LoginPage } from './Components/LoginPage/LoginPage'
 import { AppLayout } from './Components/AppLayout/AppLayout'
-import { ProtectedRoute } from './protected.route';
-import Auth from './Auth'
+
+import Axios from 'axios';
+import { useAuth } from './providers/AuthContext';
+import {ProtectedRoute} from './Components/RedirectHOC/ProtectedRoute'
 function App() {
-  return (
-    <Auth>
+  const {setIsAuthenticated, isAuthenticated} = useAuth()
+  useEffect(() => {
+    const checkLogin = async () => {
+      try {
+        const res = await Axios.get('localhost:3000/api/v1/auth')
+        console.log(res)
+      } catch (error) {
+        console.log(error)
+      }
+      
+    }
+    checkLogin()
+  })
+  return (  
       <Switch>
-        <Route exact path='/' component={LoginPage} />
-        <ProtectedRoute exact path='/app' component={AppLayout} />
+        <ProtectedRoute exact path='/' component={LoginPage} redirectCond={() => isAuthenticated} redirectLocation={"/app"} />
+        <ProtectedRoute exact path='/app' component={AppLayout} redirectCond={() => !isAuthenticated} />
         <Route path='*' component={() => { return <h1>404</h1> }} />
       </Switch>
-    </Auth>
-
   );
 }
 
