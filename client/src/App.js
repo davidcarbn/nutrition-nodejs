@@ -12,8 +12,10 @@ function App() {
   useEffect(() => {
     const checkLogin = async () => {
       try {
-        const res = await Axios.get('/api/v1/auth')
-        console.log(res)
+        const response = await Axios.get('/api/v1/auth')
+        if (response.status === 200){
+          setIsAuthenticated(true)
+        }
       } catch (error) {
         console.log(error)
       }

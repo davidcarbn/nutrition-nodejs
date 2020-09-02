@@ -1,11 +1,27 @@
 import React, { useState } from 'react'
 import './LoginPage.css'
-import { Link, Redirect, Route } from 'react-router-dom'
+import { Link, Redirect, Route, useHistory } from 'react-router-dom'
 import { useAuth } from '../../providers/AuthContext'
+import Axios from 'axios'
 export const LoginPage = () => {
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
-    const { isAuthenticated } = useAuth();
+    const { isAuthenticated, setIsAuthenticated} = useAuth();
+    const history = useHistory()
+    const login = (event) => {
+        event.preventDefault()
+        try {
+            const res = Axios.post('/api/v1/auth',{
+                email,password
+            })
+            if (res.status === 200) {
+                setIsAuthenticated(true)
+                history.push('/app')
+            }
+        } catch (error) {
+            console.log(error)
+        }
+    }
     return (
         <div className="login-page">
             <div className="login-window">
@@ -25,7 +41,7 @@ export const LoginPage = () => {
                     <Link className="login-links" to="/forgotpassword">Passwort vergessen?</Link>
 
                     <div className="input-field">
-                        <input type="submit" value="Anmelden" onClick={(event) => { event.preventDefault() }} />
+                        <input type="submit" value="Anmelden" onClick={login} />
                     </div>
                     <Link className="login-links text-center" to="/register">Konto erstellen</Link>
                 </form>
