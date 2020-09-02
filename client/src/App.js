@@ -11,8 +11,9 @@ function App() {
   const {setIsAuthenticated, isAuthenticated} = useAuth()
   useEffect(() => {
     const checkLogin = async () => {
+      console.log(process.env.REACT_APP_BASE_URL)
       try {
-        const response = await Axios.get('/api/v1/auth')
+        const response = await Axios.get('/api/v1/auth',{baseURL: process.env.REACT_APP_BASE_URL})
         if (response.status === 200){
           setIsAuthenticated(true)
         }

@@ -6,9 +6,6 @@ export const ProtectedRoute = ({
     redirectLocation='/',
     ...rest
 }) => {
-    
-    console.log(redirectLocation)
-    console.log(redirectCond())
     return (
         <Route
             {...rest}

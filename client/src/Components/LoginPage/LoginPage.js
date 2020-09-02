@@ -8,11 +8,12 @@ export const LoginPage = () => {
     const [password, setPassword] = useState();
     const { isAuthenticated, setIsAuthenticated} = useAuth();
     const history = useHistory()
-    const login = (event) => {
-        event.preventDefault()
+    const login = async (event) => {
         try {
-            const res = Axios.post('/api/v1/auth',{
-                email,password
+            const res = await Axios.request('/api/v1/auth',{
+                method: "POST",
+                data:{email,password},
+                baseURL: process.env.REACT_APP_BASE_URL
             })
             if (res.status === 200) {
                 setIsAuthenticated(true)
