@@ -12,7 +12,7 @@ const searchFood = async (req, res) => {
              foods = await Food.find({
                 user: req.user.id,
             name: {
-                $regex: name,
+                $regex: '^'+name,
                 $options: "i"
             }
         })
@@ -20,7 +20,7 @@ const searchFood = async (req, res) => {
              foods = await Food.find({
                 user: {$exists: false},
                 name: {
-                    $regex: name,
+                    $regex: '^'+name,
                     $options: "i"
                 }
             })
