@@ -24,7 +24,7 @@ const Dashboard = (props) => {
                 baseURL: process.env.REACT_APP_BASE_URL
             })
             let newDate, newDiaryEntry
-            console.log(response.data)
+            
             if (!response.data.diaryEntry) {
                 newDate = new Date(currentDate).toISOString()
                 newDiaryEntry = {

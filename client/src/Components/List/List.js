@@ -1,7 +1,6 @@
 import React from 'react'
 import './List.css'
 const List = ({ content,title ,mealtime, onAdd,onEdit }) => {
-    console.log(content)
     return (
         <div className="list-container">
             <div className="list-heading">

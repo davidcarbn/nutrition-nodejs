@@ -15,14 +15,12 @@ const CustomFood = (props) => {
                 baseURL: process.env.REACT_APP_BASE_URL,
                 url: "/api/v1/food"
             })
-            console.log(res.data)
             setFoodList(res.data.food)
         }
         fetchCustomFood()
     }, [])
 
     const handleClick = (e) => {
-        console.log(e.currentTarget.dataset.id)
         props.history.push({
             pathname: '/settings/customFood/edit',
             state: {

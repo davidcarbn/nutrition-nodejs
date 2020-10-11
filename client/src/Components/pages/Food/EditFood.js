@@ -9,13 +9,11 @@ import Button from '../../Header/Button'
 
 const EditFood = (props) => {
     const { currentDate } = useDate()
-    console.log(props.location.state.foodId)
     const { data, loading, error } = useFetch('/api/v1/food/' + props.location.state.foodId)
     const [amount, setAmount] = useState(props.location.state.amount || 100)
     const handleAmountChange = (e) => {
         setAmount(e.target.value)
     }
-    console.log(data)
     const handleSave = async (e) => {
         e.preventDefault()
         try {

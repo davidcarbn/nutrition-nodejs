@@ -1,7 +1,7 @@
 import Axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import Header from '../../../../Header'
-import BackButton from '../../../../Header/Button'
+import Button from '../../../../Header/Button'
 
 const EditCustomFood = (props) => {
     const [name, setName] = useState("")
@@ -13,11 +13,11 @@ const EditCustomFood = (props) => {
     const [transFats, setTransFats] = useState(0)
     const [polyunsaturatedFats, setPolyunsaturatedFats] = useState(0)
     const [monounsaturatedFats, setMonounsaturatedFats] = useState(0)
-   
+
     useEffect(() => {
         const fetchCustomFood = async () => {
             const res = await Axios.request({
-                url: '/api/v1/food/'+props.location.state.foodid,
+                url: '/api/v1/food/' + props.location.state.foodid,
                 baseURL: process.env.REACT_APP_BASE_URL,
                 method: 'GET'
             })
@@ -33,7 +33,7 @@ const EditCustomFood = (props) => {
             setMonounsaturatedFats(food.monounsaturatedFats)
         }
         fetchCustomFood()
-    },[])
+    }, [])
 
     const handleSubmit = async () => {
         try {
@@ -52,7 +52,7 @@ const EditCustomFood = (props) => {
                 method: "PUT",
                 data: payload,
                 baseURL: process.env.REACT_APP_BASE_URL,
-                url: "/api/v1/food/"+props.location.state.foodid
+                url: "/api/v1/food/" + props.location.state.foodid
             })
             props.history.push('/settings/customFood')
         } catch (error) {
@@ -64,12 +64,16 @@ const EditCustomFood = (props) => {
     return (
         <>
             <Header>
-                <BackButton target="/Settings/customFood" />
+                <Button target="/Settings/customFood" >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="8.429" height="14.03" viewBox="0 0 8.429 14.03">
+                        <path d="M149.076,42.925l-5.6,5.6,5.6,5.6" transform="translate(-142.061 -41.511)" fill="none" stroke="#343540" stroke-linecap="round" stroke-width="2" />
+                    </svg>
+                </Button>
                 <button onClick={handleSubmit}>Speichern</button>
             </Header>
             <div>
                 <div>Name</div>
-                <input type="text" value={name} onChange={e => setName(e.target.value)}/>
+                <input type="text" value={name} onChange={e => setName(e.target.value)} />
             </div>
             <div className="table-container">
                 <ul className="nutrition-list">

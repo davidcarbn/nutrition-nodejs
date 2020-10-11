@@ -42,7 +42,6 @@ const Search = (props) => {
     }
     const redirectToFood = (event) => {
         event.preventDefault()
-        console.log(event.currentTarget)
         props.history.push({
             pathname: '/food/add',
             state: {

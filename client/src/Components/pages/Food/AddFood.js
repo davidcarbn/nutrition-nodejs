@@ -12,8 +12,6 @@ const AddFood = (props) => {
     const { data, loading, error } = useFetch('/api/v1/food/' + props.location.state.foodId)
     const [amount, setAmount] = useState(props.location.state.amount || 100)
 
-    console.log(props.location.state.foodId)
-    console.log(data)
     const handleAmountChange = (e) => {
         setAmount(e.target.value)
     }
