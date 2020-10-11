@@ -3,7 +3,7 @@ import Axios from 'axios'
 import './Search.css'
 import { Link } from 'react-router-dom'
 import Header from '../../Header'
-import BackButton from '../../Header/BackButton'
+import BackButton from '../../Header/Button'
 import Container from '../../Container'
 const SearchProt = () => {
     return (

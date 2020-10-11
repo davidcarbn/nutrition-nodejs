@@ -1,7 +1,7 @@
 import Axios from 'axios'
 import React, { useState } from 'react'
 import Header from '../../../../Header'
-import BackButton from '../../../../Header/BackButton'
+import Button from '../../../../Header/Button'
 
 
 const AddCustomFood = (props) => {
@@ -44,12 +44,16 @@ const AddCustomFood = (props) => {
     return (
         <>
             <Header>
-                <BackButton target="/Settings/customFood" />
+                <Button target="/Settings/customFood">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="8.429" height="14.03" viewBox="0 0 8.429 14.03">
+                        <path d="M149.076,42.925l-5.6,5.6,5.6,5.6" transform="translate(-142.061 -41.511)" fill="none" stroke="#343540" stroke-linecap="round" stroke-width="2" />
+                    </svg>
+                </Button>
                 <button onClick={handleSubmit}>Speichern</button>
             </Header>
             <div>
                 <div>Name</div>
-                <input type="text" onChange={e => setName(e.target.value)}/>
+                <input type="text" onChange={e => setName(e.target.value)} />
             </div>
             <div className="table-container">
                 <ul className="nutrition-list">

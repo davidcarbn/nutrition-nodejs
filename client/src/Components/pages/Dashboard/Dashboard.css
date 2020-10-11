@@ -23,3 +23,11 @@
 .btn-settings {
     padding:15px 25px;
 }
+.dashboard-logo {
+    height:45px;
+    width:45px;
+    display:grid;
+    place-items: center;
+    font-weight: bolder;
+    font-size:18px;
+}

@@ -4,7 +4,7 @@ import Axios from 'axios'
 import { useDate } from '../../../providers/DateContext'
 
 import Header from '../../Header'
-import BackButton from '../../Header/BackButton'
+import BackButton from '../../Header/Button'
 import FoodDetails from '../../Food/FoodDetails'
 
 const AddFood = (props) => {
@@ -52,7 +52,7 @@ const AddFood = (props) => {
         {
         !data ? "Loading..." : (
             <div>
-                <input type="number" onChange={handleAmountChange} value={amount}/>
+                <input type="number" step="10" onChange={handleAmountChange} value={amount}/>
                 <FoodDetails food={data} amount={amount}/>
                 <input type="submit" onClick={handleAdd} value="Add"/>
             </div>

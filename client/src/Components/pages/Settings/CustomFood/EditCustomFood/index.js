@@ -1,7 +1,7 @@
 import Axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import Header from '../../../../Header'
-import BackButton from '../../../../Header/BackButton'
+import BackButton from '../../../../Header/Button'
 
 const EditCustomFood = (props) => {
     const [name, setName] = useState("")

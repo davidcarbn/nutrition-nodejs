@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { Link } from 'react-router-dom'
 import './Dashboard.css'
 import Header from '../../Header'
 import Axios from 'axios'
 import List from '../../List/List'
 import Diary from '../../Diary/Diary'
+import Button from '../../../Components/Header/Button'
 import { useDate } from '../../../providers/DateContext'
 const Dashboard = (props) => {
     const { currentDate, setCurrentDate } = useDate()
@@ -98,7 +98,7 @@ const Dashboard = (props) => {
     return (
         <div className="dashboard">
             <Header>
-                <div></div>
+                <div className="dashboard-logo">K</div>
                 <div className="date-selector">
                     <button onClick={prevDay}>
                         <svg xmlns="http://www.w3.org/2000/svg" width="9.843" height="15.444" viewBox="0 0 9.843 15.444">
@@ -113,12 +113,11 @@ const Dashboard = (props) => {
                     </button>
 
                 </div>
-                <Link to="/settings" className="btn-settings">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20.911" height="20.912" viewBox="0 0 20.911 20.912">
+                <Button target="/settings">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20.911" height="20.912" viewBox="0 0 20.911 20.912">
                         <path id="settings" d="M19.765,8.185l-1.638-.208a8.234,8.234,0,0,0-.5-1.2l1.012-1.3a1.3,1.3,0,0,0-.106-1.724L17.164,2.381a1.3,1.3,0,0,0-1.73-.111l-1.3,1.012a8.2,8.2,0,0,0-1.2-.5L12.727,1.15A1.305,1.305,0,0,0,11.432,0H9.48A1.3,1.3,0,0,0,8.185,1.148L7.977,2.786a8.11,8.11,0,0,0-1.2.5L5.477,2.27a1.3,1.3,0,0,0-1.724.106L2.381,3.748a1.3,1.3,0,0,0-.111,1.73l1.012,1.3a8.138,8.138,0,0,0-.5,1.2L1.15,8.185A1.305,1.305,0,0,0,0,9.48v1.952a1.3,1.3,0,0,0,1.148,1.295l1.638.208a8.234,8.234,0,0,0,.5,1.2l-1.012,1.3a1.3,1.3,0,0,0,.106,1.724l1.372,1.372a1.3,1.3,0,0,0,1.73.11l1.3-1.012a8.045,8.045,0,0,0,1.2.5l.208,1.635A1.305,1.305,0,0,0,9.48,20.912h1.952a1.3,1.3,0,0,0,1.295-1.148l.208-1.638a8.234,8.234,0,0,0,1.2-.5l1.3,1.012a1.3,1.3,0,0,0,1.724-.106l1.372-1.372a1.3,1.3,0,0,0,.111-1.73l-1.012-1.3a8.044,8.044,0,0,0,.5-1.2l1.635-.208a1.305,1.305,0,0,0,1.15-1.295V9.48a1.3,1.3,0,0,0-1.147-1.295Zm-9.309,6.627a4.357,4.357,0,1,1,4.357-4.357,4.362,4.362,0,0,1-4.357,4.357Z" />
                     </svg>
-
-                </Link>
+                </Button>
             </Header>
             <div className="">{
                 getDiaryByDate() ? (

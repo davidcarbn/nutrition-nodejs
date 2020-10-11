@@ -5,7 +5,7 @@ import { useHistory } from 'react-router-dom'
 import { useDate } from '../../../providers/DateContext'
 import FoodDetails from '../../Food/FoodDetails'
 import Header from '../../Header'
-import BackButton from '../../Header/BackButton'
+import BackButton from '../../Header/Button'
 
 const EditFood = (props) => {
     const { currentDate } = useDate()
