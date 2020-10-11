@@ -1,6 +1,5 @@
 import Axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
 import Header from '../../../../Header'
 import BackButton from '../../../../Header/BackButton'
 
@@ -50,10 +49,10 @@ const EditCustomFood = (props) => {
                 monounsaturatedFats
             }
             const res = await Axios.request({
-                method: "POST",
+                method: "PUT",
                 data: payload,
                 baseURL: process.env.REACT_APP_BASE_URL,
-                url: "/api/v1/food"
+                url: "/api/v1/food/"+props.location.state.foodid
             })
             props.history.push('/settings/customFood')
         } catch (error) {

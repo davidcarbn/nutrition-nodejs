@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react'
-import useFetch from '../hooks/useFetch'
+import useFetch from '../../hooks/useFetch'
 import Axios from 'axios'
 import { useHistory } from 'react-router-dom'
-import { useDate } from '../../providers/DateContext'
-import FoodDetails from './FoodDetails'
+import { useDate } from '../../../providers/DateContext'
+import FoodDetails from '../../Food/FoodDetails'
+import Header from '../../Header'
+import BackButton from '../../Header/BackButton'
 
 const EditFood = (props) => {
     const { currentDate } = useDate()
@@ -39,7 +41,7 @@ const EditFood = (props) => {
         try {
             const res = await Axios.request({
                 method: "DELETE",
-                url: '/api/v1/diary/'+currentDate+'/'+props.location.state.mealtime + '/' + props.location.state.entryId,
+                url: '/api/v1/diary/' + currentDate + '/' + props.location.state.mealtime + '/' + props.location.state.entryId,
                 baseURL: process.env.REACT_APP_BASE_URL
             })
             props.history.push({
@@ -52,17 +54,21 @@ const EditFood = (props) => {
             console.log(error)
         }
     }
-    return (
+    return (<>
+        <Header>
+            <BackButton target="/dashboard" />
+            <input type="submit" onClick={handleSave} value="Speichern"/>
+        </Header>
+        <>{
         !data ? "Loading..." : (
             <div>
                 <input type="number" onChange={handleAmountChange} value={amount} />
-                <FoodDetails food={data} amount={amount} />
-                <input type="submit" onClick={handleSave} value="Save" />
+                <FoodDetails food={data} amount={amount} /> 
                 <input type="submit" onClick={deleteEntry} value="Delete" />
             </div>
-
+       
         )
-
+ }</></>
     )
 }
 export default EditFood

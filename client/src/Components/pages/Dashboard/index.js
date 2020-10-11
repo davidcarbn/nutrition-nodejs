@@ -24,6 +24,7 @@ const Dashboard = (props) => {
                 baseURL: process.env.REACT_APP_BASE_URL
             })
             let newDate, newDiaryEntry
+            console.log(response.data)
             if (!response.data.diaryEntry) {
                 newDate = new Date(currentDate).toISOString()
                 newDiaryEntry = {
@@ -73,12 +74,11 @@ const Dashboard = (props) => {
         setCurrentDate(newDate)
     }
     const getDiaryByDate = () => {
-        console.log(currentDate)
         return diary.get(new Date(currentDate).toISOString())
     }
     const redirectToAddPage = (event) => {
         props.history.push({
-            pathname: "/search",
+            pathname: "/food/search",
             state: {
                 mealtime: event.target.dataset.mealtime
             }
@@ -86,7 +86,7 @@ const Dashboard = (props) => {
     }
     const redirectToEditPage = (event) => {
         props.history.push({
-            pathname: "/editfood",
+            pathname: "/food/edit",
             state: {
                 amount: event.currentTarget.dataset.amount,
                 foodId: event.currentTarget.dataset.foodid,
@@ -121,22 +121,41 @@ const Dashboard = (props) => {
                 </Link>
             </Header>
             <div className="">{
-                getDiaryByDate() ?
-                    <List
-                        mealtime={"dinner"}
-                        title="Abendessen"
-                        content={diary.get(new Date(currentDate).toISOString()).dinner}
-                        onAdd={redirectToAddPage}
-                        onEdit={redirectToEditPage}
-                    />
+                getDiaryByDate() ? (
+                    <>
+                        <List
+                            mealtime={"breakfast"}
+                            title="Frühstück"
+                            content={diary.get(new Date(currentDate).toISOString()).breakfast}
+                            onAdd={redirectToAddPage}
+                            onEdit={redirectToEditPage}
+                        />
+                        <List
+                            mealtime={"lunch"}
+                            title="Mittagessen"
+                            content={diary.get(new Date(currentDate).toISOString()).lunch}
+                            onAdd={redirectToAddPage}
+                            onEdit={redirectToEditPage}
+                        />
+                        <List
+                            mealtime={"dinner"}
+                            title="Abendessen"
+                            content={diary.get(new Date(currentDate).toISOString()).dinner}
+                            onAdd={redirectToAddPage}
+                            onEdit={redirectToEditPage}
+                        />
+                        <List
+                            mealtime={"snacks"}
+                            title="Snacks"
+                            content={diary.get(new Date(currentDate).toISOString()).snacks}
+                            onAdd={redirectToAddPage}
+                            onEdit={redirectToEditPage}
+                        />
+                    </>
+                )
+
                     : "Loading..."
             }</div>
-
-
-
-            <button onClick={() => { console.log(diary) }}>Diary</button>
-            <button onClick={() => { console.log(new Date(currentDate).toISOString()) }}>ISO</button>
-            <button onClick={() => { console.log(new Date(currentDate).toLocaleTimeString()) }}>Local Time</button>
         </div>
     )
 }

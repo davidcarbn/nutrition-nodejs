@@ -17,7 +17,29 @@ const insertFood = async (req, res) => {
             polyunsaturatedFats,
             monounsaturatedFats
         }
-        const food = await Food.findOneAndUpdate({name,user:req.user.id},payload,{upsert:true})
+        const food = await Food.create(payload)
+        res.status(200).json({ food: food })
+    } catch (error) {
+        console.log(error)
+        res.status(500).json({ error })
+    }
+}
+const updateFoodById = async (req, res) => {
+    try {
+        const {id} = req.params
+        const { name, kcal, protein, sugar, fiber, saturatedFats, transFats, polyunsaturatedFats, monounsaturatedFats } = req.body
+        const payload = {
+            name,
+            kcal,
+            protein,
+            sugar,
+            fiber,
+            saturatedFats,
+            transFats,
+            polyunsaturatedFats,
+            monounsaturatedFats
+        }
+        const food = await Food.findOneAndUpdate({_id: id},payload)
         res.status(200).json({ food: food })
     } catch (error) {
         console.log(error)
@@ -45,5 +67,6 @@ const getFoodByUser = async (req, res) => {
 }
 foodController.get('/', getFoodByUser)
 foodController.get('/:id', getFoodById)
+foodController.put('/:id', updateFoodById)
 foodController.post('/', insertFood)
 export default foodController

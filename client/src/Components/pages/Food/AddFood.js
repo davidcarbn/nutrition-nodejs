@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react'
-import useFetch from '../hooks/useFetch'
+import useFetch from '../../hooks/useFetch'
 import Axios from 'axios'
-import { useDate } from '../../providers/DateContext'
-import FoodDetails from './FoodDetails'
-import {Link} from 'react-router-dom'
-import Header from '../Header'
-import BackButton from '../Header/BackButton'
+import { useDate } from '../../../providers/DateContext'
+
+import Header from '../../Header'
+import BackButton from '../../Header/BackButton'
+import FoodDetails from '../../Food/FoodDetails'
 
 const AddFood = (props) => {
     const {currentDate} = useDate()

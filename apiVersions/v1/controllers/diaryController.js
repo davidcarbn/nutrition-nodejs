@@ -7,7 +7,12 @@ const getDiaryEntry = async (req, res) => {
     try {
         const {id} = req.user
         const {date} = req.params
-        const diaryEntry = await Diary.findOne({user:id,date:date}).populate({path:'dinner',populate: {path:'food'}})
+        const diaryEntry = await Diary.findOne({user:id,date:date})
+            .populate({path:'breakfast',populate: {path:'food'}})
+            .populate({path:'lunch',populate: {path:'food'}})
+            .populate({path:'dinner',populate: {path:'food'}})
+            .populate({path:'snacks',populate: {path:'food'}})
+            
         res.status(200).json({diaryEntry})
     } catch (error) {
         res.status(500).json({error})

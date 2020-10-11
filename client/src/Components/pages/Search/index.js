@@ -42,9 +42,10 @@ const Search = (props) => {
         event.preventDefault()
         console.log(event.currentTarget)
         props.history.push({
-            pathname: '/food',
+            pathname: '/food/add',
             state: {
                 foodId: event.currentTarget.dataset.foodid,
+                mealtime: props.location.state.mealtime
             }
         })
     }

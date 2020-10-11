@@ -9,9 +9,9 @@ import { useAuth } from './providers/AuthContext';
 import { ProtectedRoute } from './Components/RedirectHOC/ProtectedRoute'
 import Search from './Components/pages/Search';
 import { DateProvider } from './providers/DateContext';
-import addFood from './Components/Food/AddFood';
+import addFood from './Components/pages/Food/AddFood';
 import FoodDetails from './Components/Food/FoodDetails';
-import EditFood from './Components/Food/EditFood';
+import EditFood from './Components/pages/Food/EditFood';
 import Settings from './Components/pages/Settings'
 import AddCustomFood from './Components/pages/Settings/CustomFood/AddCustomFood'
 import CustomFood from './Components/pages/Settings/CustomFood'
@@ -54,17 +54,17 @@ function App() {
           redirectCond={() => !isAuthenticated}
           />
         <ProtectedRoute
-          exact path='/search'
+          exact path='/food/search'
           component={Search}
           redirectCond={() => !isAuthenticated}
         />
         <ProtectedRoute
-          path='/food'
+          path='/food/add'
           component={addFood}
           redirectCond={() => !isAuthenticated}
         />
         <ProtectedRoute
-          exact path='/editfood'
+          exact path='/food/edit'
           component={EditFood}
           redirectCond={() => !isAuthenticated}
         />
