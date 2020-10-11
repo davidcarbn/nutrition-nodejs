@@ -6,6 +6,7 @@ import cors from 'cors'
 const authController = express.Router()
 
 const checkStatus = async (req,res) => {
+    console.log(req.cookies)
     if (req.user.id === -1) {
         return res.status(401).json({user: req.user})
     }
@@ -24,11 +25,11 @@ const login = async (req,res) => {
             res.status(401)
             return
         }
-        const accessToken = await signToken({id:user.id},{expiresIn: 60*60})
+        const accessToken = await signToken({id:user.id, roles: user.roles},{expiresIn: 60*60*24*1000})
         console.log(accessToken)
         res.cookie('accessToken',accessToken, {
-            maxAge:900000,
-            httpOnly: process.env.DEV ? false : true,
+            maxAge:60*60*24*1000,
+            httpOnly: true,
             secure:  process.env.DEV ? false : true,
         })
         res.status(200).json({user})

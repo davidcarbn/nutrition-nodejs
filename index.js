@@ -14,7 +14,6 @@ app.use(bodyParser())
 app.use(cookieParser())
 
 app.use('/api/v1',v1)
-app.get('/',(req,res)=> res.send('test'))
 app.get('*',(req,res) => {
     res.sendFile(path.join(__dirname+'/client/build/index.html'))
 })

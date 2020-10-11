@@ -9,16 +9,16 @@ const assignUser = async (req,res,next) => {
             req.user = user
         } else {
             const decoded = await verifyToken(token,{
-                algorithms:['HS256'],
+                algorithms:['HS256']
             })
-            // TODO: if expired
             const user = new User(decoded.id,decoded.roles)
             req.user = user
         }
         next()
     } catch (error) {
-        console.log(error)
-        res.status(500).json({error})
+        const user = new User(-1, ["guest"])
+        req.user = user
+        next()
     }
     
 }

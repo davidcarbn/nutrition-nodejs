@@ -17,60 +17,44 @@ permissions: [{
 const rolesCatalog = {
     guest: {
         permissions: [{
-            route: new RegExp('^\/api(\/v\d+)?\/auth\/user\/?$'),
-            methods: {
-                POST: {
-                    MFArequired: false,
-                    isOwner: false
-                },
-            }
+            route: new RegExp('^\/api(\/v\\d+)?\/auth\/?$'),
+            methods: ["GET","POST"] 
         },
         {
-            route: new RegExp('^\/api(\/v\d+)?\/auth\/?$'),
-            methods: {
-                POST: {
-                    MFArequired: false,
-                    isOwner: false
-                }
-            }
+            route: new RegExp('^\/api(\/v\\d+)?\/user\/?$'),
+            methods: ["POST"]
         }]
     },
-    influencer: {
+    user: {
         permissions: [{
-            route: new RegExp('^\/api(\/v\d+)?\/auth\/?$'),
-            methods: {
-                DELETE: {
-                    MFArequired: false,
-                    isOwner: false
-                }
-            }
+            route: new RegExp('^\/api(\/v\\d+)?\/auth\/?$'),
+            methods: ["GET"]
         },
         {
-            description: "Delete user",
-            route: new RegExp('^\/api(\/v\d+)?\/auth\/user\/.+$'),
-            methods: {
-                DELETE: {
-                    MFArequired: true,
-                    isOwner: true
-                },
-                UPDATE: {
-                    MFArequired: true,
-                    isOwner: true
-                }
-            }
+            route: new RegExp('^\/api(\/v\\d+)?\/diary\/.+$'),
+            methods: ["GET","POST"]
         },
         {
-            route: new RegExp('^\/api(\/v\d+)?\/auth\/refreshtoken\/.+$'),
-            methods: {
-                GET: {
-                    MFArequired: false,
-                    isOwner: true
-                },
-                DELETE: {
-                    MFArequired: false,
-                    isOwner: true
-                }
-            }
+            route: new RegExp('^\/api(\/v\\d+)?\/diary\/.+\/.+\/.+$'),
+            methods: ["PUT","DELETE"]
+        },
+        {
+            route: new RegExp('^\/api(\/v\\d+)?\/food\/.+$'),
+            methods: ["GET"]
+        },
+        {
+            route: new RegExp('^\/api(\/v\\d+)?\/food\/?$'),
+            methods: ["GET","POST"]
+        },
+        {
+            route: new RegExp('^\/api(\/v\\d+)?\/search\/.+$'),
+            methods: ["POST",]
+        }]
+    },
+    admin: {
+        permissions: [{
+            route: new RegExp('^\/api(\/v\\d+)?\/.*'),
+            methods: ["GET","POST","PUT","DELETE"]
         }]
     }
 }

@@ -8,7 +8,11 @@ const createUser = async (req,res,next) => {
         const {email,password} = req.body
         if (!password || !email) throw new Error()
         const hashed = await hash(password,10)
-        const user = await User.create({email:email,password:hashed})
+        const user = await User.create({
+            email:email,
+            password:hashed,
+            roles: ["user"]
+        })
         res.status(201).json({user})
     } catch (error) {
         console.log(error)

@@ -18,7 +18,7 @@ export const LoginPage = () => {
             })
             if (res.status === 200) {
                 setIsAuthenticated(true)
-                history.push('/app')
+                history.push('/dashboard')
             }
         } catch (error) {
             console.log(error)

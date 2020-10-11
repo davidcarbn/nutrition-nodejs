@@ -1,0 +1,29 @@
+.table-container {
+    display:grid;
+    grid-template-columns: repeat(auto-fit,minmax(206px,1fr));
+}
+.nutrition-list {
+    list-style: none;
+    padding:5px 20px;
+}
+.nutrition-sub-list {
+    list-style: none;
+    padding:0;
+    
+}
+.nutrition-list-item {
+}
+.nutrition-list-name {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #dadce0;
+    padding:10px;
+    font-weight: 500;
+}
+.nutrition-sub-list-name {
+    padding:5px 10px 5px 40px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #dadce0;
+    
+}

@@ -1,0 +1,14 @@
+.Search-container {
+    width:100%;
+}
+.food-search {
+    width:100%;
+    box-sizing: border-box;
+    background-color: #dadce0;
+    border:none;
+    display:block;
+    padding:10px
+}
+.search-heading {
+
+}
