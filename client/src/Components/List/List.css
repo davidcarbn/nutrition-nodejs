@@ -1,12 +1,12 @@
 .list-container {
-    width: clamp(280px,90%,600px);
+    width: clamp(280px,100%,700px);
     margin:20px auto;
     background-color:#fff;
 }
 /* rgb(26, 115, 232) */
 .list-heading {
     color: rgb(26, 115, 232);
-    font-size:1em;
+    font-size:1.25em;
     font-weight:600;
     padding: 7.5px 20px;
     border-bottom: 1px solid #dadce0;
@@ -27,6 +27,7 @@
     align-items: center;
     border:none;
     padding: 10px 20px;
+    font-size:0.9em;
 }
 .btn-add {
     width:100%;
@@ -34,6 +35,7 @@
     background-color: transparent;
     padding:10px 20px;
     border: none;
+    font-size:0.75em;
     font-weight: 600;
     text-align: left;
 }
