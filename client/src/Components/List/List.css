@@ -6,6 +6,7 @@
 /* rgb(26, 115, 232) */
 .list-heading {
     color: rgb(26, 115, 232);
+    font-size:1em;
     font-weight:600;
     padding: 7.5px 20px;
     border-bottom: 1px solid #dadce0;
