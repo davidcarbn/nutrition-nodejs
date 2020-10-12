@@ -1,6 +1,6 @@
 import React from 'react'
-import './List.css'
-const List = ({ content,title ,mealtime, onAdd,onEdit }) => {
+import './DiaryList.css'
+const DiaryList = ({ content,title ,mealtime, onAdd,onEdit }) => {
     return (
         <div className="list-container">
             <div className="list-heading">
@@ -8,8 +8,8 @@ const List = ({ content,title ,mealtime, onAdd,onEdit }) => {
             </div>
             <ul className="list">{
                 content.map((item,idx) => (
-                    <li key={idx} className="list-item">
-                        <button data-mealtime={mealtime} data-amount={item.amount} data-foodid={item.food._id} data-entryid={item._id} onClick={onEdit}>
+                    <li key={idx}>
+                        <button className="list-item" data-mealtime={mealtime} data-amount={item.amount} data-foodid={item.food._id} data-entryid={item._id} onClick={onEdit}>
                             <div>
                                 <div>{item.food.name}</div>
                                 <div>{item.amount}g</div>
@@ -33,4 +33,4 @@ const List = ({ content,title ,mealtime, onAdd,onEdit }) => {
     }
     return content.map((listitem) => (<li>{listitem.food.name}</li>))
 }
-export default List
+export default DiaryList

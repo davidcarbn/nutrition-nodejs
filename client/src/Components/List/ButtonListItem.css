@@ -1,0 +1,18 @@
+.list-item {
+    padding:10px 20px;
+    width:100%;
+    background:transparent;
+    border:none;
+    color: #343540;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.list-item svg {
+    padding: 0 10px 0 0;
+}
+.btn-edit {
+    color: #1A73E8;
+    font-size:0.8em;
+    font-weight:600;
+}

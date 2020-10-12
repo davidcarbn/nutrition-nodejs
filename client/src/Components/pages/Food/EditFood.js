@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import useFetch from '../../hooks/useFetch'
 import Axios from 'axios'
-import { useHistory } from 'react-router-dom'
 import { useDate } from '../../../providers/DateContext'
 import FoodDetails from '../../Food/FoodDetails'
 import Header from '../../Header'
 import Button from '../../Header/Button'
-
+import './EditFood.css'
 const EditFood = (props) => {
     const { currentDate } = useDate()
     const { data, loading, error } = useFetch('/api/v1/food/' + props.location.state.foodId)
@@ -63,11 +62,11 @@ const EditFood = (props) => {
         </Header>
         <>{
         !data ? "Loading..." : (
-            <div>
-                <input type="number" onChange={handleAmountChange} value={amount} />
+            <>
+                <input type="numeric" onChange={handleAmountChange} value={amount} />
                 <FoodDetails food={data} amount={amount} /> 
-                <input type="submit" onClick={deleteEntry} value="Delete" />
-            </div>
+                <input className="btn-delete" type="submit" onClick={deleteEntry} value="Eintrag löschen" />
+            </>
        
         )
  }</></>

@@ -2,10 +2,12 @@ import React, { useState, useEffect, useRef } from 'react'
 import './Dashboard.css'
 import Header from '../../Header'
 import Axios from 'axios'
-import List from '../../List/List'
+import DiaryList from '../../List/DiaryList'
 import Diary from '../../Diary/Diary'
 import Button from '../../../Components/Header/Button'
 import { useDate } from '../../../providers/DateContext'
+import ButtonList from '../../List/ButtonList'
+import Container from '../../Container'
 const Dashboard = (props) => {
     const { currentDate, setCurrentDate } = useDate()
     const [diary, setDiary] = useState(new Map())
@@ -119,31 +121,32 @@ const Dashboard = (props) => {
                     </svg>
                 </Button>
             </Header>
-            <div className="">{
+            <Container>
+                {
                 getDiaryByDate() ? (
                     <>
-                        <List
+                        <DiaryList
                             mealtime={"breakfast"}
                             title="Frühstück"
                             content={diary.get(new Date(currentDate).toISOString()).breakfast}
                             onAdd={redirectToAddPage}
                             onEdit={redirectToEditPage}
                         />
-                        <List
+                        <DiaryList
                             mealtime={"lunch"}
                             title="Mittagessen"
                             content={diary.get(new Date(currentDate).toISOString()).lunch}
                             onAdd={redirectToAddPage}
                             onEdit={redirectToEditPage}
                         />
-                        <List
+                        <DiaryList
                             mealtime={"dinner"}
                             title="Abendessen"
                             content={diary.get(new Date(currentDate).toISOString()).dinner}
                             onAdd={redirectToAddPage}
                             onEdit={redirectToEditPage}
                         />
-                        <List
+                        <DiaryList
                             mealtime={"snacks"}
                             title="Snacks"
                             content={diary.get(new Date(currentDate).toISOString()).snacks}
@@ -154,7 +157,9 @@ const Dashboard = (props) => {
                 )
 
                     : "Loading..."
-            }</div>
+            }
+            </Container>
+            
         </div>
     )
 }

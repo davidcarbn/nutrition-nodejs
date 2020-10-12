@@ -9,7 +9,24 @@ const FoodDetails = ({ food, amount = 100 }) => {
         saturatedFats =  0 ,
         transFats =  0 ,
         polyunsaturatedFats =  0 ,
-        monounsaturatedFats =  0 
+        monounsaturatedFats =  0,
+        potassium =  0,
+        phosphate =  0,
+        calcium =  0,
+        sodium =  0,
+        vitamineA =  0,
+        vitamineB1 =  0,
+        vitamineB2 =  0,
+        vitamineB3 =  0,
+        vitamineB5 =  0,
+        vitamineB6 =  0,
+        vitamineB7 =  0,
+        vitamineB9 =  0,
+        vitamineB12 =  0,
+        vitamineC =  0,
+        vitamineD =  0,
+        vitamineE =  0,
+        vitamineK =  0,
     } = food
     return (
         <div className="table-container">
@@ -89,8 +106,34 @@ const FoodDetails = ({ food, amount = 100 }) => {
             <ul className="nutrition-list">
                 <li className="nutrition-list-item">
                     <div className="nutrition-list-name">
+                        <div>Kalium</div>
+                        <div>{potassium / 100 * amount} mg</div>
+                    </div>
+                </li>
+                <li className="nutrition-list-item">
+                    <div className="nutrition-list-name">
+                        <div>Phosphat</div>
+                        <div>{(phosphate / 100 * amount)} mg</div>
+                    </div>
+                </li>
+                <li className="nutrition-list-item">
+                    <div className="nutrition-list-name">
+                        <div>Kalzium</div>
+                        <div>{calcium / 100 * amount} mg</div>
+                    </div>
+                </li>
+                <li className="nutrition-list-item">
+                    <div className="nutrition-list-name">
+                        <div>Natrium</div>
+                        <div>{(sodium / 100 * amount)} mg</div>
+                    </div>
+                </li>
+            </ul>
+            <ul className="nutrition-list">
+                <li className="nutrition-list-item">
+                    <div className="nutrition-list-name">
                         <div>Vitamin A</div>
-                        <div>100</div>
+                        <div>{(vitamineA / 100 * amount)} mg</div>
                     </div>
                 </li>
                 <li className="nutrition-list-item">
@@ -102,49 +145,49 @@ const FoodDetails = ({ food, amount = 100 }) => {
                         <li className="nutrition-list-item">
                             <div className="nutrition-sub-list-name">
                                 <div>Vitamin B1</div>
-                                <div>10g</div>
+                                <div>{(vitamineB1 / 100 * amount)} mg</div>
                             </div>
                         </li>
                         <li>
                             <div className="nutrition-sub-list-name">
                                 <div>Vitamin B2</div>
-                                <div>10g</div>
+                                <div>{(vitamineB2 / 100 * amount)} mg</div>
                             </div>
                         </li>
                         <li>
                             <div className="nutrition-sub-list-name">
                                 <div>Vitamin B3</div>
-                                <div>10g</div>
+                                <div>{(vitamineB3 / 100 * amount)} mg</div>
                             </div>
                         </li>
                         <li>
                             <div className="nutrition-sub-list-name">
                                 <div>Vitamin B5</div>
-                                <div>10g</div>
+                                <div>{(vitamineB5 / 100 * amount)} mg</div>
                             </div>
                         </li>
                         <li>
                             <div className="nutrition-sub-list-name">
                                 <div>Vitamin B6</div>
-                                <div>10g</div>
+                                <div>{(vitamineB6 / 100 * amount)} mg</div>
                             </div>
                         </li>
                         <li>
                             <div className="nutrition-sub-list-name">
                                 <div>Vitamin B7</div>
-                                <div>10g</div>
+                                <div>{(vitamineB7 / 100 * amount)} mg</div>
                             </div>
                         </li>
                         <li>
                             <div className="nutrition-sub-list-name">
                                 <div>Vitamin B9</div>
-                                <div>10g</div>
+                                <div>{(vitamineB9 / 100 * amount)} mg</div>
                             </div>
                         </li>
                         <li>
                             <div className="nutrition-sub-list-name">
                                 <div>Vitamin B12</div>
-                                <div>10g</div>
+                                <div>{(vitamineB12 / 100 * amount)} mg</div>
                             </div>
                         </li>
                     </ul>
@@ -152,25 +195,25 @@ const FoodDetails = ({ food, amount = 100 }) => {
                 <li className="nutrition-list-item">
                     <div className="nutrition-list-name">
                         <div>Vitamin C</div>
-                        <div>100</div>
+                        <div>{(vitamineC / 100 * amount)} mg</div>
                     </div>
                 </li>
                 <li className="nutrition-list-item">
                     <div className="nutrition-list-name">
                         <div>Vitamin D</div>
-                        <div>100</div>
+                        <div>{(vitamineD / 100 * amount)} mg</div>
                     </div>
                 </li>
                 <li className="nutrition-list-item">
                     <div className="nutrition-list-name">
                         <div>Vitamin E</div>
-                        <div>100</div>
+                        <div>{(vitamineE / 100 * amount)} mg</div>
                     </div>
                 </li>
                 <li className="nutrition-list-item">
                     <div className="nutrition-list-name">
                         <div>Vitamin K</div>
-                        <div>100</div>
+                        <div>{(vitamineK / 100 * amount)} mg</div>
                     </div>
                 </li>
             </ul>

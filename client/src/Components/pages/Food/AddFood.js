@@ -6,6 +6,7 @@ import { useDate } from '../../../providers/DateContext'
 import Header from '../../Header'
 import Button from '../../Header/Button'
 import FoodDetails from '../../Food/FoodDetails'
+import Container from '../../Container'
 
 const AddFood = (props) => {
     const { currentDate } = useDate()
@@ -51,7 +52,7 @@ const AddFood = (props) => {
                 </Button>
                 <input type="submit" onClick={handleAdd} value="Hinzufügen" />
             </Header>
-            {
+            <Container>{
                 !data ? "Loading..." : (
                     <div>
                         <input type="number" step="10" onChange={handleAmountChange} value={amount} />
@@ -60,6 +61,9 @@ const AddFood = (props) => {
                     </div>
 
                 )}
+
+            </Container>
+            
         </>
 
     )
