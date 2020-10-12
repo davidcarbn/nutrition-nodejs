@@ -18,7 +18,7 @@ import CustomFood from './Components/pages/Settings/CustomFood'
 import EditCustomFood from './Components/pages/Settings/CustomFood/EditCustomFood'
 function App() {
   const { setIsAuthenticated, isAuthenticated, setUser } = useAuth()
-  const [appLoading,setAppLoading] = useState(true)
+  const [appLoading, setAppLoading] = useState(true)
   useEffect(() => {
     const checkLogin = async () => {
       try {
@@ -40,77 +40,79 @@ function App() {
     } else {
       setIsAuthenticated(false)
     }
-    
+
   }, [])
   if (appLoading) {
     return (
-    <div className="spinner-outer">
-      <img src="/loading-spinner.svg" className="spinner"/>
-    </div>
+      <div className="spinner-outer">
+        <img src="/spinner.svg" className="spinner" />
+      </div>
     )
   } else {
     return (
-    <DateProvider>
-      <Switch>
-        <ProtectedRoute
-          exact path='/'
-          component={LoginPage}
-          redirectCond={() => isAuthenticated}
-          redirectLocation={"/dashboard"}
-        />
-        <ProtectedRoute
-          exact path='/app'
-          component={AppLayout}
-          redirectCond={() => !isAuthenticated}
-        />
-        <ProtectedRoute
-          exact path='/dashboard'
-          component={Dashboard}
-          redirectCond={() => !isAuthenticated}
-          />
-        <ProtectedRoute
-          exact path='/food/search'
-          component={Search}
-          redirectCond={() => !isAuthenticated}
-        />
-        <ProtectedRoute
-          path='/food/add'
-          component={addFood}
-          redirectCond={() => !isAuthenticated}
-        />
-        <ProtectedRoute
-          exact path='/food/edit'
-          component={EditFood}
-          redirectCond={() => !isAuthenticated}
-        />
-        <ProtectedRoute
-          exact path='/settings'
-          component={Settings}
-          redirectCond={() => !isAuthenticated}
-        />
-        <ProtectedRoute
-          exact path='/settings/customFood'
-          component={CustomFood}
-          redirectCond={() => !isAuthenticated}
-        />
-        <ProtectedRoute
-          exact path='/settings/customFood/add'
-          component={AddCustomFood}
-          redirectCond={() => !isAuthenticated}
-        />
-        <ProtectedRoute
-          exact path='/settings/customFood/edit'
-          component={EditCustomFood}
-          redirectCond={() => !isAuthenticated}
-        />
-        <Route
-          exact path='/dev'
-          component={FoodDetails}
-          redirectCond={() => !isAuthenticated}
-        />
-        <Route path='*' component={() => { return <h1>404</h1> }} />
-      </Switch>
-    </DateProvider>
+      <div className="App-Layout">
+        <DateProvider>
+          <Switch>
+            <ProtectedRoute
+              exact path='/'
+              component={LoginPage}
+              redirectCond={() => isAuthenticated}
+              redirectLocation={"/dashboard"}
+            />
+            <ProtectedRoute
+              exact path='/app'
+              component={AppLayout}
+              redirectCond={() => !isAuthenticated}
+            />
+            <ProtectedRoute
+              exact path='/dashboard'
+              component={Dashboard}
+              redirectCond={() => !isAuthenticated}
+            />
+            <ProtectedRoute
+              exact path='/food/search'
+              component={Search}
+              redirectCond={() => !isAuthenticated}
+            />
+            <ProtectedRoute
+              path='/food/add'
+              component={addFood}
+              redirectCond={() => !isAuthenticated}
+            />
+            <ProtectedRoute
+              exact path='/food/edit'
+              component={EditFood}
+              redirectCond={() => !isAuthenticated}
+            />
+            <ProtectedRoute
+              exact path='/settings'
+              component={Settings}
+              redirectCond={() => !isAuthenticated}
+            />
+            <ProtectedRoute
+              exact path='/settings/customFood'
+              component={CustomFood}
+              redirectCond={() => !isAuthenticated}
+            />
+            <ProtectedRoute
+              exact path='/settings/customFood/add'
+              component={AddCustomFood}
+              redirectCond={() => !isAuthenticated}
+            />
+            <ProtectedRoute
+              exact path='/settings/customFood/edit'
+              component={EditCustomFood}
+              redirectCond={() => !isAuthenticated}
+            />
+            <Route
+              exact path='/dev'
+              component={FoodDetails}
+              redirectCond={() => !isAuthenticated}
+            />
+            <Route path='*' component={() => { return <h1>404</h1> }} />
+          </Switch>
+        </DateProvider>
+      </div>
     )
   }
 }
