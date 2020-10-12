@@ -63,7 +63,7 @@ const EditFood = (props) => {
         <>{
         !data ? "Loading..." : (
             <>
-                <input type="numeric" onChange={handleAmountChange} value={amount} />
+                <input type="number" inputmode="numeric" onChange={handleAmountChange} value={amount} />
                 <FoodDetails food={data} amount={amount} /> 
                 <input className="btn-delete" type="submit" onClick={deleteEntry} value="Eintrag löschen" />
             </>
