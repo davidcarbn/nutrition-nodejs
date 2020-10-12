@@ -32,6 +32,11 @@ const login = async (req,res) => {
             httpOnly: true,
             secure:  process.env.DEV ? false : true,
         })
+        res.cookie('logged',accessToken, {
+            maxAge:60*60*24*1000,
+            httpOnly: false,
+            secure:  process.env.DEV ? false : true,
+        })
         res.status(200).json({user})
     } catch (error) {
         console.log(error)

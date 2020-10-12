@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 import { Route, Switch } from 'react-router-dom'
 import { LoginPage } from './Components/LoginPage/LoginPage'
@@ -18,22 +18,38 @@ import CustomFood from './Components/pages/Settings/CustomFood'
 import EditCustomFood from './Components/pages/Settings/CustomFood/EditCustomFood'
 function App() {
   const { setIsAuthenticated, isAuthenticated, setUser } = useAuth()
+  const [appLoading,setAppLoading] = useState(true)
   useEffect(() => {
     const checkLogin = async () => {
       try {
+        setAppLoading(true)
         const response = await Axios.get('/api/v1/auth', { baseURL: process.env.REACT_APP_BASE_URL })
         if (response.status === 200) {
           setIsAuthenticated(true)
           setUser(response.data.user)
+          setAppLoading(false)
         }
       } catch (error) {
         console.log(error)
       }
 
     }
-    checkLogin()
+    console.log(document.cookie)
+    if (document.cookie.indexOf('logged') > -1) {
+      checkLogin()
+    } else {
+      setIsAuthenticated(false)
+    }
+    
   }, [])
-  return (
+  if (appLoading) {
+    return (
+    <div className="spinner-outer">
+      <img src="/loading-spinner.svg" className="spinner"/>
+    </div>
+    )
+  } else {
+    return (
     <DateProvider>
       <Switch>
         <ProtectedRoute
@@ -95,8 +111,8 @@ function App() {
         <Route path='*' component={() => { return <h1>404</h1> }} />
       </Switch>
     </DateProvider>
-
-  );
+    )
+  }
 }
 
 export default App;

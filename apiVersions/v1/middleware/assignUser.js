@@ -2,8 +2,9 @@ import User from '../helpers/user'
 import {ErrorHandler} from '../helpers/error'
 import { verifyToken } from '../helpers/jwt'
 const assignUser = async (req,res,next) => {
+    const token = req.cookies.accessToken;
     try {
-        const token = req.cookies.accessToken;
+        
         if (!token) {
             const user = new User(-1, ["guest"])
             req.user = user
@@ -18,6 +19,16 @@ const assignUser = async (req,res,next) => {
     } catch (error) {
         const user = new User(-1, ["guest"])
         req.user = user
+        res.cookie('accessToken',token, {
+            maxAge:0,
+            httpOnly: true,
+            secure:  process.env.DEV ? false : true,
+        })
+        res.cookie('logged',token, {
+            maxAge:0,
+            httpOnly: false,
+            secure:  process.env.DEV ? false : true,
+        })
         next()
     }
     
