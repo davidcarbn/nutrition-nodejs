@@ -18,7 +18,7 @@ import CustomFood from './Components/pages/Settings/CustomFood'
 import EditCustomFood from './Components/pages/Settings/CustomFood/EditCustomFood'
 function App() {
   const { setIsAuthenticated, isAuthenticated, setUser } = useAuth()
-  const [appLoading, setAppLoading] = useState(true)
+  const [appLoading, setAppLoading] = useState(false)
   useEffect(() => {
     const checkLogin = async () => {
       try {
