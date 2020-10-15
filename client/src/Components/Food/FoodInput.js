@@ -6,7 +6,7 @@ const FoodInput = ({food,setFood,noInput = false}) => {
     
     const updateFood = (e) => {
         e.persist()
-        setFood(prevFood => ({...prevFood,[e.target.dataset.key]: parseFloat(e.target.value)}))
+        setFood(prevFood => ({...prevFood,[e.target.dataset.key]: parseFloat(e.target.value) || 0}))
     }
     return (
         <div className="table-container">
@@ -15,7 +15,7 @@ const FoodInput = ({food,setFood,noInput = false}) => {
                         <div className="nutrition-list-name">
                             <div>Kalorien</div>
                             <input
-                                type="number"
+                                type="text"
                                 step="10"
                                 inputmode="numeric"
                                 data-key="kcal"
@@ -29,7 +29,7 @@ const FoodInput = ({food,setFood,noInput = false}) => {
                         <div className="nutrition-list-name">
                             <div>Eiweiß</div>
                             <input
-                                type="number"
+                                type="text"
                                 inputmode="decimal"
                                 data-key="protein"
                                 value={food.protein}
@@ -47,7 +47,7 @@ const FoodInput = ({food,setFood,noInput = false}) => {
                                 <div className="nutrition-sub-list-name">
                                     <div>Zucker</div>
                                     <input
-                                        type="number"
+                                        type="text"
                                         inputmode="decimal"
                                         data-key="sugar"
                                         placeholder={food.sugar}
@@ -59,7 +59,7 @@ const FoodInput = ({food,setFood,noInput = false}) => {
                                 <div className="nutrition-sub-list-name">
                                     <div>Ballaststoffe</div>
                                     <input
-                                        type="number"
+                                        type="text"
                                         inputmode="decimal"
                                         data-key="fiber"
                                         placeholder={food.fiber}
