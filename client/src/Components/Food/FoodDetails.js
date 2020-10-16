@@ -214,7 +214,7 @@ const FoodDetails = ({ food, setFood, amount = 100, asInput }) => {
                                 placeholder={food.potassium * amount / 100}
                                 disabled={!asInput}
                             />
-                            <div className="nutrition-nutrient-unit">kcal</div>
+                            <div className="nutrition-nutrient-unit">mg</div>
                         </div>
                     </div>
                 </li>
@@ -231,7 +231,7 @@ const FoodDetails = ({ food, setFood, amount = 100, asInput }) => {
                                 onChange={updateFood}
                                 disabled={!asInput}
                             />
-                            <div className="nutrition-nutrient-unit">g</div>
+                            <div className="nutrition-nutrient-unit">mg</div>
                         </div>
                     </div>
                 </li>
@@ -248,7 +248,7 @@ const FoodDetails = ({ food, setFood, amount = 100, asInput }) => {
                                 onChange={updateFood}
                                 disabled={!asInput}
                             />
-                            <div className="nutrition-nutrient-unit">g</div>
+                            <div className="nutrition-nutrient-unit">mg</div>
                         </div>
                     </div>
                 </li>
@@ -265,7 +265,7 @@ const FoodDetails = ({ food, setFood, amount = 100, asInput }) => {
                                 onChange={updateFood}
                                 disabled={!asInput}
                             />
-                            <div className="nutrition-nutrient-unit">g</div>
+                            <div className="nutrition-nutrient-unit">mg</div>
                         </div>
                     </div>
                 </li>
@@ -301,7 +301,7 @@ const FoodDetails = ({ food, setFood, amount = 100, asInput }) => {
                                     + parseFloat(food.vitamineB12 * amount / 100)).toFixed(1)}
                                 disabled
                             />
-                            <div className="nutrition-nutrient-unit">g</div>
+                            <div className="nutrition-nutrient-unit">mg</div>
                         </div>
                     </div>
                     <ul className="nutrition-sub-list">
