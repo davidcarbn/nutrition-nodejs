@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './LoginPage.css'
 import { Link, Redirect, Route, useHistory } from 'react-router-dom'
-import { useAuth } from '../../providers/AuthContext'
+import { useAuth } from '../../../providers/AuthContext'
 import Axios from 'axios'
 export const LoginPage = () => {
     const [email, setEmail] = useState();

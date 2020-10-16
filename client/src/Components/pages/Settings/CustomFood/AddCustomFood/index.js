@@ -38,7 +38,6 @@ const AddCustomFood = (props) => {
                     <div className="save">
                         Speichern
                     </div>
-                    
                 </Button>
             </Header>
            

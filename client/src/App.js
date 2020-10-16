@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import { Route, Switch } from 'react-router-dom'
-import { LoginPage } from './Components/LoginPage/LoginPage'
+import { LoginPage } from './Components/pages/LoginPage/LoginPage'
 import { AppLayout } from './Components/AppLayout/AppLayout'
 import Dashboard from './Components/pages/Dashboard'
 import Axios from 'axios';
