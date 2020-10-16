@@ -1,0 +1,33 @@
+.input-field {
+    position: relative;
+    margin: 30px 0 0 0;
+    width:100%;
+}
+.input-field label {
+    position: absolute;
+    top:-8px;
+    left:10px;
+    background-color:#fff;
+    padding:0 7px;
+    font-size: 12px;
+}
+.input-field input {
+    outline:none;
+    border: 1px solid #dadce0;
+    background:#fff;
+    border-radius:5px;
+    display: block;
+    padding:10px;
+    width:100%;
+    box-sizing: border-box;
+}
+.input-field input:focus {
+    outline:none;
+    border: 2px solid rgb(26, 115, 232);
+    border-radius:5px;
+}
+
+.input-field input:focus + label{   
+    color: rgb(26, 115, 232);
+    font-weight: 500;
+}

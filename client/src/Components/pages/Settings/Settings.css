@@ -15,4 +15,6 @@
 }
 .settings-list li a svg {
     padding: 0 10px 0 0;
+    height:30px;
+    width:30px;
 }

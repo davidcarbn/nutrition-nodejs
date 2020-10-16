@@ -13,12 +13,19 @@
 }
 .btn-header {
     height:45px;
-    width:45px;
+    min-width:45px;
     display:grid;
     place-items: center;
     color: #343540;
+    background: transparent;
+    border:none;
 }
 .btn-header svg {
     height:15px;
     width:15px;
+}
+.btn-header .save {
+    padding: 0 10px;
+    font-weight: 600;
+    color: #1A73E8;
 }

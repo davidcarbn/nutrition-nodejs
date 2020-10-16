@@ -7,17 +7,33 @@ import Header from '../../Header'
 import Button from '../../Header/Button'
 import FoodDetails from '../../Food/FoodDetails'
 import Container from '../../Container'
+import Food from '../../../objects/Food'
 
 const AddFood = (props) => {
     const { currentDate } = useDate()
-    const { data, loading, error } = useFetch('/api/v1/food/' + props.location.state.foodId)
+    const [food, setFood] = useState(new Food())
     const [amount, setAmount] = useState(props.location.state.amount || 100)
-
+    const [foodID,setFoodID] = useState(null)
+    useEffect(() => {
+        const fetchFood = async () => {
+            try {
+                const res = await Axios.request({
+                    url: '/api/v1/food/' + props.location.state.foodId,
+                    baseURL: process.env.REACT_APP_BASE_URL
+                })
+                setFood(new Food(res.data.food))
+                console.log(res.data)
+                setFoodID(res.data.food._id)
+            } catch (error) {
+                console.log(error)
+            }
+        }
+        fetchFood()
+    },[])
     const handleAmountChange = (e) => {
         setAmount(e.target.value)
     }
-    const handleAdd = async (e) => {
-        e.preventDefault()
+    const handleAdd = async () => {
         try {
             const res = await Axios.request({
                 url: '/api/v1/diary/' + currentDate,
@@ -26,7 +42,7 @@ const AddFood = (props) => {
                 data: {
                     entry: {
                         [props.location.state.mealtime]: {
-                            food: data._id,
+                            food: foodID,
                             amount
                         }
                     }
@@ -45,25 +61,32 @@ const AddFood = (props) => {
     return (
         <>
             <Header>
-                <Button target="/food/search" >
+                <Button target="/food/search" state={{mealtime:props.location.state.mealtime}}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="8.429" height="14.03" viewBox="0 0 8.429 14.03">
                         <path d="M149.076,42.925l-5.6,5.6,5.6,5.6" transform="translate(-142.061 -41.511)" fill="none" stroke="#343540" stroke-linecap="round" stroke-width="2" />
                     </svg>
                 </Button>
-                <input type="submit" onClick={handleAdd} value="Hinzufügen" />
+                <Button handleSubmit={handleAdd}>
+                    <div className="save">
+                        Speichern
+                    </div>
+                </Button>
             </Header>
             <Container>{
-                !data ? "Loading..." : (
-                    <div>
+                !food ? "Loading..." : (
+                    <>
                         <input type="number" step="10" onChange={handleAmountChange} value={amount} />
-                        <FoodDetails food={data} amount={amount} />
-                        <input type="submit" onClick={handleAdd} value="Add" />
-                    </div>
+                        <FoodDetails
+                            food={food}
+                            setFood={setFood}
+                            amount={amount}
+                        />
+                    </>
 
                 )}
 
             </Container>
-            
+
         </>
 
     )

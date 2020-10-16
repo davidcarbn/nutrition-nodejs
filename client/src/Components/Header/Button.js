@@ -1,10 +1,22 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-const Button = ({ target,children }) => {
+import { Link, useHistory } from 'react-router-dom'
+
+/* You can set eather target + state or pass down a custom handleSubmit function*/
+const Button = ({ target, state, handleSubmit, children }) => {
+    const history = useHistory()
+    const handleClick = (e) => {
+        if (!handleSubmit) {
+            return history.push({
+                pathname: target,
+                state: state
+            })
+        }
+        handleSubmit()
+    }
     return (
-        <Link to={target} className="btn-header">
-        {children}
-        </Link>
+        <button onClick={handleClick} className="btn-header">
+            {children}
+        </button>
     )
 }
 export default Button

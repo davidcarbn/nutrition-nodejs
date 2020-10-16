@@ -4,21 +4,47 @@
 }
 .nutrition-list {
     list-style: none;
-    padding:0;
+    padding:0; 
+}
+.nutrition-nutrient {
+    font-weight: 600;
+}
+.nutrition-nutrient-quantity {
+    width:120px;
+    display:flex;
+}
+.nutrition-nutrient-value {
+    text-align: end;
+    width:60px;
+    background:transparent;
+    border:none;
+    font-size:1em;
+    border: 1px solid #1A73E8;
+    border-radius:4px;
+}
+.nutrition-nutrient-unit {
+    width:60px;
+    text-align: center;
+    font-weight: 300;
+}
+
+.nutrition-list input:disabled {
+    border:none; 
 }
 .nutrition-sub-list {
     list-style: none;
     padding:0;
-    
 }
-.nutrition-list-item {
+.nutrition-sub-list .nutrition-nutrient {
+    font-weight:400;
 }
+
 .nutrition-list-name {
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid #dadce0;
     padding:10px 20px;
-    font-weight: 500;
+    
 }
 .nutrition-sub-list-name {
     padding:5px 20px 5px 35px;

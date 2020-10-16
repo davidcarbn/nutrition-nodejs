@@ -1,7 +1,7 @@
 import Axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import Food from '../../../../../objects/Food'
-import FoodInput from '../../../../Food/FoodInput'
+import FoodDetails from '../../../../Food/FoodDetails'
 import Header from '../../../../Header'
 import Button from '../../../../Header/Button'
 
@@ -34,15 +34,18 @@ const AddCustomFood = (props) => {
                         <path d="M149.076,42.925l-5.6,5.6,5.6,5.6" transform="translate(-142.061 -41.511)" fill="none" stroke="#343540" stroke-linecap="round" stroke-width="2" />
                     </svg>
                 </Button>
-                <button onClick={handleSubmit}>Speichern</button>
+                <Button handleSubmit={handleSubmit}>
+                    <div className="save">
+                        Speichern
+                    </div>
+                    
+                </Button>
             </Header>
-            <div className="food-input">
-                <label>Name</label>
-                <input type="text"  />
-            </div>
-            <FoodInput 
+           
+            <FoodDetails 
                 food={food}
                 setFood={setFood}
+                asInput
             />
             
         </>
