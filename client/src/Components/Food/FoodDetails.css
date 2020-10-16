@@ -12,6 +12,7 @@
 .nutrition-nutrient-quantity {
     width:120px;
     display:flex;
+    align-items: center;
 }
 .nutrition-nutrient-value {
     text-align: end;
@@ -29,7 +30,11 @@
 }
 
 .nutrition-list input:disabled {
-    border:none; 
+    border:none;
+    color: #000;
+}
+.nutrition-list input::placeholder {
+    color: #000;
 }
 .nutrition-sub-list {
     list-style: none;
