@@ -12,7 +12,7 @@ const FoodDetails = ({ food, setFood, amount = 100, asInput }) => {
             setFood(prevFood => ({ ...prevFood, [e.target.dataset.key]: e.target.value || "" }))
             return;
         }
-        setFood(prevFood => ({ ...prevFood, [e.target.dataset.key]: parseFloat(e.target.value) || 0 }))
+        setFood(prevFood => ({ ...prevFood, [e.target.dataset.key]: parseFloat(e.target.value.replace(',','.')) || 0 }))
     }
     return (
         <>

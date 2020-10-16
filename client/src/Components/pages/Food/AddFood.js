@@ -8,12 +8,13 @@ import Button from '../../Header/Button'
 import FoodDetails from '../../Food/FoodDetails'
 import Container from '../../Container'
 import Food from '../../../objects/Food'
+import LabelInput from '../../Input/LabelInput'
 
 const AddFood = (props) => {
     const { currentDate } = useDate()
     const [food, setFood] = useState(new Food())
     const [amount, setAmount] = useState(props.location.state.amount || 100)
-    const [foodID,setFoodID] = useState(null)
+    const [foodID, setFoodID] = useState(null)
     useEffect(() => {
         const fetchFood = async () => {
             try {
@@ -29,7 +30,7 @@ const AddFood = (props) => {
             }
         }
         fetchFood()
-    },[])
+    }, [])
     const handleAmountChange = (e) => {
         setAmount(e.target.value)
     }
@@ -61,7 +62,7 @@ const AddFood = (props) => {
     return (
         <>
             <Header>
-                <Button target="/food/search" state={{mealtime:props.location.state.mealtime}}>
+                <Button target="/food/search" state={{ mealtime: props.location.state.mealtime }}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="8.429" height="14.03" viewBox="0 0 8.429 14.03">
                         <path d="M149.076,42.925l-5.6,5.6,5.6,5.6" transform="translate(-142.061 -41.511)" fill="none" stroke="#343540" stroke-linecap="round" stroke-width="2" />
                     </svg>
@@ -75,7 +76,15 @@ const AddFood = (props) => {
             <Container>{
                 !food ? "Loading..." : (
                     <>
-                        <input type="number" step="10" onChange={handleAmountChange} value={amount} />
+                        <Container>
+                            <LabelInput
+                                type="number"
+                                inputmode="numeric"
+                                onChange={handleAmountChange}
+                                value={amount}
+                                label="Menge"
+                            />
+                        </Container>
                         <FoodDetails
                             food={food}
                             setFood={setFood}
