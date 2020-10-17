@@ -92,7 +92,7 @@ const FoodDetails = ({ food, setFood, amount = 100, asInput }) => {
                                         onChange={updateFood}
                                         disabled={!asInput}
                                     />
-                                    <td className="nutrition-nutrient-unit">g</td>
+                                    <div className="nutrition-nutrient-unit">g</div>
                                 </div>
                             </div>
                         </li>

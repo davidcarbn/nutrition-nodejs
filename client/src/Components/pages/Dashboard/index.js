@@ -12,6 +12,7 @@ const Dashboard = (props) => {
     const { currentDate, setCurrentDate } = useDate()
     const [diary, setDiary] = useState(new Map())
     const stateMutate = useRef(true)
+    console.log(diary)
     let dateString = new Intl.DateTimeFormat('de-DE', {
         weekday: 'short',
         day: 'numeric',

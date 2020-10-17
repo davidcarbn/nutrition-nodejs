@@ -1,4 +1,5 @@
 import express from 'express'
+import Diary from '../../../models/Diary'
 import Food from '../../../models/Food'
 
 const foodController = express.Router()
@@ -26,7 +27,7 @@ const insertFood = async (req, res) => {
 }
 const updateFoodById = async (req, res) => {
     try {
-        const {id} = req.params
+        const { id } = req.params
         const { name, kcal, protein, sugar, fiber, saturatedFats, transFats, polyunsaturatedFats, monounsaturatedFats } = req.body
         const payload = {
             name,
@@ -39,7 +40,7 @@ const updateFoodById = async (req, res) => {
             polyunsaturatedFats,
             monounsaturatedFats
         }
-        const food = await Food.findOneAndUpdate({_id: id},payload)
+        const food = await Food.findOneAndUpdate({ _id: id }, payload)
         res.status(200).json({ food: food })
     } catch (error) {
         console.log(error)
@@ -65,8 +66,20 @@ const getFoodByUser = async (req, res) => {
         res.status(500).json({})
     }
 }
+const deleteFood = async (req, res) => {
+    try {
+        const {id} = req.params
+        const food = await Food.findByIdAndDelete({ _id: id })
+        res.status(200).json({success:true})
+    } catch (error) {
+        console.log(error)
+        res.status(500).json(error)
+    }
+
+}
 foodController.get('/', getFoodByUser)
 foodController.get('/:id', getFoodById)
 foodController.put('/:id', updateFoodById)
 foodController.post('/', insertFood)
+foodController.delete('/:id', deleteFood)
 export default foodController

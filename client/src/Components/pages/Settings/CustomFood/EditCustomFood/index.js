@@ -36,6 +36,19 @@ const EditCustomFood = (props) => {
 
 
     }
+
+    const deleteEntry = async () => {
+        try {
+            const res = await Axios.request({
+                method: "DELETE",
+                baseURL: process.env.REACT_APP_BASE_URL,
+                url: '/api/v1/food/'+props.location.state.foodid
+            })
+            props.history.push('/settings/customFood')
+        } catch (error) {
+            console.log(error)
+        }
+    }
     return (
         <>
             <Header>
@@ -55,6 +68,7 @@ const EditCustomFood = (props) => {
                 setFood={setFood}
                 asInput
             />
+            <input className="btn-delete" type="submit" onClick={deleteEntry} value="Eintrag löschen" />
         </>
     )
 }

@@ -3,6 +3,8 @@ import './LoginPage.css'
 import { Link, Redirect, Route, useHistory } from 'react-router-dom'
 import { useAuth } from '../../../providers/AuthContext'
 import Axios from 'axios'
+import LabelInput from '../../Input/LabelInput'
+import Container from '../../Container'
 export const LoginPage = () => {
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
@@ -25,21 +27,27 @@ export const LoginPage = () => {
         }
     }
     return (
-        <div className="login-page">
-            <div className="login-window">
+        <Container>
                 <div className="login-heading">
                     <h1>Anmelden</h1>
                     <p>Gebe deine Nutzerdaten an</p>
                 </div>
                 <form className="login-form">
-                    <div className="input-field">
-                        <input type="email" onChange={event => setEmail(event.target.value)} autoFocus required />
-                        <label for="email">E-Mail</label>
-                    </div>
-                    <div className="input-field">
-                        <input type="password" onChange={event => setPassword(event.target.value)} required />
-                        <label for="password">Passwort</label>
-                    </div>
+                    <LabelInput 
+                        label="E-Mail"
+                        id="email"
+                        onChange={event => setEmail(event.target.value)}
+                        value={email}
+                        autoFocus
+                        required
+                    />
+                    <LabelInput 
+                        label="Passwort"
+                        id="password"
+                        onChange={event => setPassword(event.target.value)}
+                        value={password}
+                        required
+                    />
                     <Link className="login-links" to="/forgotpassword">Passwort vergessen?</Link>
 
                     <div className="input-field">
@@ -47,7 +55,9 @@ export const LoginPage = () => {
                     </div>
                     <Link className="login-links text-center" to="/register">Konto erstellen</Link>
                 </form>
-            </div>
-        </div>
+           
+        </Container>
+            
+       
     )
 }

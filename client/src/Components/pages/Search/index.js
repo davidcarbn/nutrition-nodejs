@@ -6,6 +6,7 @@ import Header from '../../Header'
 import BackButton from '../../Header/Button'
 import Container from '../../Container'
 import Button from '../../Header/Button'
+import LabelInput from '../../Input/LabelInput'
 const SearchProt = () => {
     return (
         <div className="Search-container">
@@ -18,8 +19,10 @@ const SearchProt = () => {
 const Search = (props) => {
     const [result, setResult] = useState([])
     const [result2, setResult2] = useState([])
+    const [search,setSearch] = useState("")
     const searchFood = async (event) => {
         try {
+            setSearch(event.target.value)
             const food = event.target.value
             const reqPub = Axios.request({
                 method: "POST",
@@ -60,11 +63,12 @@ const Search = (props) => {
                 </Button>
             </Header>
             <Container>
-
-                <input className="food-search" type="text" placeholder="Suchen..." onChange={searchFood} />
-                
-
-
+                <LabelInput
+                    type="text"
+                    placeholder="Suchen..."
+                    onChange={searchFood}
+                    value={search}
+                />
                     <ul className="search-result">
                         <div className="result-heading">
                             Gespeicherte Nahrungsmittel

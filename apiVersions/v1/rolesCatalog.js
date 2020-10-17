@@ -40,7 +40,7 @@ const rolesCatalog = {
         },
         {
             route: new RegExp('^\/api(\/v\\d+)?\/food\/.+$'),
-            methods: ["GET","PUT"]
+            methods: ["GET","PUT","DELETE"]
         },
         {
             route: new RegExp('^\/api(\/v\\d+)?\/food\/?$'),

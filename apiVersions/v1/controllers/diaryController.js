@@ -54,9 +54,6 @@ const deleteDiaryEntry = async (req, res) => {
     try {
         const userId = req.user.id
         const {date,mealtime,id} = req.params
-        const {amount} = req.body
-        const mealid = mealtime+'._id'
-        const mealamount =mealtime+'.$.amount'
         let query = {
             user:userId,
             date:date

@@ -1,4 +1,5 @@
 import mongoose from 'mongoose'
+import Diary from './Diary'
 
 const FoodSchema = new mongoose.Schema({
     user: {
@@ -38,52 +39,70 @@ const FoodSchema = new mongoose.Schema({
         type: Number
     },
     phosphate: {
-        type:Number
+        type: Number
     },
     calcium: {
-        type:Number
+        type: Number
     },
     sodium: {
-        type:Number
+        type: Number
     },
     vitamineA: {
-        type:Number
+        type: Number
     },
     vitamineB1: {
-        type:Number
+        type: Number
     },
     vitamineB2: {
-        type:Number
+        type: Number
     },
     vitamineB3: {
-        type:Number
+        type: Number
     },
     vitamineB5: {
-        type:Number
+        type: Number
     },
     vitamineB6: {
-        type:Number
+        type: Number
     },
     vitamineB7: {
-        type:Number
+        type: Number
     },
     vitamineB9: {
-        type:Number
+        type: Number
     },
     vitamineB12: {
-        type:Number
+        type: Number
     },
     vitamineC: {
-        type:Number
+        type: Number
     },
     vitamineD: {
-        type:Number
+        type: Number
     },
     vitamineE: {
-        type:Number
+        type: Number
     },
     vitamineK: {
-        type:Number
+        type: Number
+    }
+})
+
+FoodSchema.post('findOneAndDelete', async function (doc, next) {
+    try {
+        await Diary.updateMany({},{
+                $pull: {
+                    "breakfast": { "food": doc._id },
+                    "lunch": { "food": doc._id },
+                    "dinner": { "food": doc._id },
+                    "snacks": { "food": doc._id },
+                }
+            },
+            { "multi": true },
+            next
+        )
+    } catch (error) {
+        res.status(500)
     }
 })
 
