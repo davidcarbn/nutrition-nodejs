@@ -4,7 +4,7 @@ import './Search.css'
 import { Link } from 'react-router-dom'
 import Header from '../../Header'
 import BackButton from '../../Header/Button'
-import Container from '../../Container'
+import Container from '../../Containers/Container'
 import Button from '../../Header/Button'
 import LabelInput from '../../Input/LabelInput'
 const SearchProt = () => {
@@ -17,6 +17,7 @@ const SearchProt = () => {
     )
 }
 const Search = (props) => {
+    console.log('search',props.location.state.mealtime)
     const [result, setResult] = useState([])
     const [result2, setResult2] = useState([])
     const [search,setSearch] = useState("")

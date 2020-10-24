@@ -3,9 +3,11 @@ class Food {
     constructor(food = {}) {
             this.name = food.name || ""
             this.kcal = food.kcal || 0
+            this.carbohydrates = food.carbohydrates || 0
             this.sugar = food.sugar || 0
             this.fiber = food.fiber || 0
             this.protein = food.protein || 0
+            this.fats = food.fats || 0
             this.saturatedFats = food.saturatedFats || 0
             this.transFats = food.transFats || 0
             this.polyunsaturatedFats = food.polyunsaturatedFats || 0

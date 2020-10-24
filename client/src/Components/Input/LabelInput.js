@@ -14,8 +14,8 @@ const LabelInput = ({
 }) => {
     return (
         <div className="input-field">
-            <input id={id} type={type} inputmode={inputmode} onChange={onChange} value={value} autoFocus={autoFocus} required={required} disabled={disabled} {...rest} />
-            <label for={id}>{label}</label>
+            <input id={id} type={type} inputMode={inputmode} onChange={onChange} value={value} autoFocus={autoFocus} required={required} disabled={disabled} {...rest} />
+            <label htmlFor={id}>{label}</label>
         </div>
     )
 

@@ -34,6 +34,7 @@ const insertDiaryEntry = async (req, res) => {
         }
         */
         const { entry } = req.body
+        console.log(entry)
         const diaryEntry = await Diary.findOneAndUpdate({
             user: id,
             date: date

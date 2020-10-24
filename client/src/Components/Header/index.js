@@ -3,7 +3,7 @@ import'./Header.css'
 
 const Header = ({children}) => {
     return (
-        <header className="App-header">
+        <header className="header">
             {children}
         </header>
     )

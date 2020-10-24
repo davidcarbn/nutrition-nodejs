@@ -1,0 +1,29 @@
+.nutrient {
+    flex:1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.nutrient-circle {
+    position: relative;
+    height:60px;
+    width:60px;
+    border: 3px solid blue;
+    border-radius: 50%;
+    display:grid;
+    place-items: center;
+    text-align: center;
+}
+.nutrient-amount {
+    font-weight:700;
+    font-size:18px;
+    line-height: 18px;
+}
+.nutrient-unit {
+    font-weight:200;
+    font-size: 14px;
+    line-height: 14px;
+}
+.nutrient-name {
+    margin:2.5px;
+}

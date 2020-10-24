@@ -12,7 +12,7 @@
 .nutrition-nutrient-quantity {
     width:120px;
     display:flex;
-    align-items: center;
+    align-items: baseline;
 }
 .nutrition-nutrient-value {
     text-align: end;

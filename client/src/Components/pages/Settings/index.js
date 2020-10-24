@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import Container from '../../Container'
+import Container from '../../Containers/Container'
 import Header from '../../Header'
 import Button from '../../Header/Button'
 import './Settings.css'

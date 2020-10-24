@@ -5,14 +5,16 @@ import Food from '../../../models/Food'
 const foodController = express.Router()
 const insertFood = async (req, res) => {
     try {
-        const { name, kcal, protein, sugar, fiber, saturatedFats, transFats, polyunsaturatedFats, monounsaturatedFats } = req.body
+        const { name, kcal, protein,carbohydrates, sugar, fiber,fats, saturatedFats, transFats, polyunsaturatedFats, monounsaturatedFats } = req.body
         const payload = {
             user: req.user.id,
             name,
             kcal,
             protein,
+            carbohydrates,
             sugar,
             fiber,
+            fats,
             saturatedFats,
             transFats,
             polyunsaturatedFats,
@@ -28,13 +30,15 @@ const insertFood = async (req, res) => {
 const updateFoodById = async (req, res) => {
     try {
         const { id } = req.params
-        const { name, kcal, protein, sugar, fiber, saturatedFats, transFats, polyunsaturatedFats, monounsaturatedFats } = req.body
+        const { name, kcal, protein,carbohydrates, sugar, fiber,fats, saturatedFats, transFats, polyunsaturatedFats, monounsaturatedFats } = req.body
         const payload = {
             name,
             kcal,
             protein,
+            carbohydrates,
             sugar,
             fiber,
+            fats,
             saturatedFats,
             transFats,
             polyunsaturatedFats,

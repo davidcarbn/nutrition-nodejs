@@ -1,0 +1,15 @@
+.container-child {
+    padding: 20px;
+            border-top: 1px solid rgba(230, 230, 230, 1);
+            border-bottom: 1px solid rgba(230, 230, 230, 1);
+            background-color: #ffffff;
+            margin:10px 0;
+}
+.container-child:last-child {
+    margin-bottom: 0;
+}
+@media screen and (min-width: 1000px) {
+    .container-child {
+        border: 1px solid rgba(230, 230, 230, 1);
+    }
+}

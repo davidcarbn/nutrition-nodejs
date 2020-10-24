@@ -1,21 +1,24 @@
 import React, { useState } from 'react'
 import './LoginPage.css'
-import { Link, Redirect, Route, useHistory } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import { useAuth } from '../../../providers/AuthContext'
 import Axios from 'axios'
 import LabelInput from '../../Input/LabelInput'
-import Container from '../../Container'
+import Container from '../../Containers/Container'
+import ContainerChild from '../../Containers/Container/ContainerChild'
+import LayoutContainer from '../../Containers/LayoutContainer'
+import LayoutContainerChild from '../../Containers/LayoutContainer/LayoutContainerChild'
 export const LoginPage = () => {
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
-    const { isAuthenticated, setIsAuthenticated} = useAuth();
+    const { setIsAuthenticated } = useAuth();
     const history = useHistory()
     const login = async (event) => {
         event.preventDefault()
         try {
-            const res = await Axios.request('/api/v1/auth',{
+            const res = await Axios.request('/api/v1/auth', {
                 method: "POST",
-                data:{email,password},
+                data: { email, password },
                 baseURL: process.env.REACT_APP_BASE_URL
             })
             if (res.status === 200) {
@@ -27,37 +30,52 @@ export const LoginPage = () => {
         }
     }
     return (
-        <Container>
-                <div className="login-heading">
-                    <h1>Anmelden</h1>
-                    <p>Gebe deine Nutzerdaten an</p>
-                </div>
-                <form className="login-form">
-                    <LabelInput 
-                        label="E-Mail"
-                        id="email"
-                        onChange={event => setEmail(event.target.value)}
-                        value={email}
-                        autoFocus
-                        required
-                    />
-                    <LabelInput 
-                        label="Passwort"
-                        id="password"
-                        onChange={event => setPassword(event.target.value)}
-                        value={password}
-                        required
-                    />
-                    <Link className="login-links" to="/forgotpassword">Passwort vergessen?</Link>
 
-                    <div className="input-field">
-                        <input type="submit" value="Anmelden" onClick={login} />
-                    </div>
-                    <Link className="login-links text-center" to="/register">Konto erstellen</Link>
-                </form>
-           
-        </Container>
-            
-       
+        <LayoutContainer>
+            <LayoutContainerChild>
+                <Container>
+                    <ContainerChild>
+                        <Container flexCol alignCenter>
+                            <h1 className="login-heading">Anmelden</h1>
+                            <p className="login-p">Gebe deine Nutzerdaten an</p>
+                        </Container>
+                        <form>
+                            <LabelInput
+                                label="E-Mail"
+                                id="email"
+                                type="email"
+                                inputmode="email"
+                                onChange={event => setEmail(event.target.value)}
+                                value={email}
+                                autoFocus
+                                required
+                            />
+                            <LabelInput
+                                label="Passwort"
+                                id="password"
+                                type="password"
+                                onChange={event => setPassword(event.target.value)}
+                                value={password}
+                                required
+                            />
+                            <Link className="login-links" to="/forgotpassword">Passwort vergessen?</Link>
+                            <Container flexCol alignCenter>
+                                <input className="login-button" type="submit" value="Anmelden" onClick={login} />
+
+                                <Link className="login-links text-center" to="/register">Konto erstellen</Link>
+                            </Container>
+
+                        </form>
+                    </ContainerChild>
+
+
+                </Container >
+            </LayoutContainerChild>
+        </LayoutContainer>
+
+
+
+
+
     )
 }

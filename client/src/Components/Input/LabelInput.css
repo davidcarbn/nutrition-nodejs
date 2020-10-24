@@ -1,16 +1,15 @@
 .input-field {
     position: relative;
-    margin: 30px 20px 0 20px;
-    width: auto;
+    margin: 30px 0;
     box-sizing: border-box;
 }
 .input-field label {
     position: absolute;
-    top:-8px;
+    top:-0.7em;
     left:10px;
     background-color:#fff;
     padding:0 7px;
-    font-size: 12px;
+    font-size: 1em;
 }
 .input-field input {
     outline:none;
@@ -20,6 +19,7 @@
     display: block;
     padding:10px;
     width:100%;
+    font-size: 1.125em;
     box-sizing: border-box;
 }
 .input-field input:focus {

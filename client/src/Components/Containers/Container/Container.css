@@ -1,0 +1,24 @@
+.container {
+    width:100%;
+    margin:0 auto;
+}
+.flex-row {
+    display:flex;
+    flex-direction: row;
+}
+.flex-col {
+    display:flex;
+    flex-direction: column;
+}
+.align-center {
+    align-items: center;
+}
+.space-between {
+    justify-content: space-between;
+}
+.justify-center {
+    justify-content: center;
+}
+.wrap {
+    flex-wrap: wrap;
+}

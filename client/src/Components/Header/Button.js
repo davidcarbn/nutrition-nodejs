@@ -1,8 +1,8 @@
 import React from 'react'
-import { Link, useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 
 /* You can set eather target + state or pass down a custom handleSubmit function*/
-const Button = ({ target, state, handleSubmit, children }) => {
+const Button = ({ target, state, handleSubmit, children,...rest }) => {
     const history = useHistory()
     const handleClick = (e) => {
         if (!handleSubmit) {
@@ -11,10 +11,10 @@ const Button = ({ target, state, handleSubmit, children }) => {
                 state: state
             })
         }
-        handleSubmit()
+        handleSubmit(e)
     }
     return (
-        <button onClick={handleClick} className="btn-header">
+        <button onClick={e => handleClick(e)} className="btn-header" {...rest}>
             {children}
         </button>
     )

@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import './App.css';
 import { Route, Switch } from 'react-router-dom'
 import { LoginPage } from './Components/pages/LoginPage/LoginPage'
-import { AppLayout } from './Components/AppLayout/AppLayout'
 import Dashboard from './Components/pages/Dashboard'
 import Axios from 'axios';
 import { useAuth } from './providers/AuthContext';
@@ -50,7 +49,7 @@ function App() {
     )
   } else {
     return (
-      <div className="App-Layout">
+      <div className="app-layout">
         <DateProvider>
           <Switch>
             <ProtectedRoute
@@ -58,11 +57,6 @@ function App() {
               component={LoginPage}
               redirectCond={() => isAuthenticated}
               redirectLocation={"/dashboard"}
-            />
-            <ProtectedRoute
-              exact path='/app'
-              component={AppLayout}
-              redirectCond={() => !isAuthenticated}
             />
             <ProtectedRoute
               exact path='/dashboard'

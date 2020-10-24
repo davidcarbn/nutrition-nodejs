@@ -7,6 +7,7 @@ import Button from '../../../../Header/Button'
 
 const EditCustomFood = (props) => {
     const [food,setFood] = useState(new Food())
+    const [loading,setLoading] = useState(false)
     useEffect(() => {
         const fetchCustomFood = async () => {
             const res = await Axios.request({
@@ -18,17 +19,18 @@ const EditCustomFood = (props) => {
             setFood(new Food(food))
         }
         fetchCustomFood()
-    }, [])
+    },[])
 
     const handleSubmit = async () => {
         try {
-            
+            setLoading(true)
             const res = await Axios.request({
                 method: "PUT",
                 data: food,
                 baseURL: process.env.REACT_APP_BASE_URL,
                 url: "/api/v1/food/" + props.location.state.foodid
             })
+            setLoading(false)
             props.history.push('/settings/customFood')
         } catch (error) {
 
@@ -39,11 +41,13 @@ const EditCustomFood = (props) => {
 
     const deleteEntry = async () => {
         try {
+            setLoading(true)
             const res = await Axios.request({
                 method: "DELETE",
                 baseURL: process.env.REACT_APP_BASE_URL,
                 url: '/api/v1/food/'+props.location.state.foodid
             })
+            setLoading(false)
             props.history.push('/settings/customFood')
         } catch (error) {
             console.log(error)

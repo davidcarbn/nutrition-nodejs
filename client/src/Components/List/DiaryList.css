@@ -1,37 +1,74 @@
-.list-container {
-    margin: 10px 0;
-    background-color: #fff;
+.mealtime-heading {
+    font-weight: 700;
+    font-size: 1.25em;
 }
-
-.list-heading {
-    color: rgb(26, 115, 232);
-    font-size:1.25em;
-    font-weight:600;
-    padding: 7.5px 20px;
-    border-bottom: 1px solid #dadce0;
-}
-.list {
+.mealtime-list {
+    padding: 0;
     list-style: none;
-    padding:0;
-    margin:0;
+    margin: 10px 0 0 0;
 }
-.list-item {
-    background-color: transparent;
+.mealtime-list-item button {
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border:none;
-    padding: 10px 20px;
-    font-size:0.9em;
-}
-.btn-add {
-    width:100%;
-    color: rgb(26, 115, 232);
-    background-color: transparent;
-    padding:10px 20px;
+    background: transparent;
     border: none;
-    font-size:0.75em;
+    padding: 5px 0;
+}
+.mealtime-list-item-name {
+    text-align: start;
     font-weight: 600;
-    text-align: left;
+    font-size: 1.1em;
+    color: #3e3f49;
+}
+
+.mealtime-list-item-amount {
+    text-align: start;
+    font-style: oblique;
+}
+.mealtime-name-placeholder {
+    width:150px;
+    height:0.9em;
+    margin-bottom: 5px;
+    border-radius: 6px;
+    background-color: rgb(223, 223, 223);
+    position: relative;
+    overflow: hidden;
+}
+.placeholder::before {
+    content:'';
+    position: absolute;
+    display:block;
+    left:-100%;
+    top:0;
+    height:100%;
+    width:100%;
+    background: linear-gradient(to right, transparent 0%, #ffffff 50%, transparent 100%);
+    animation: placeholderLoading 1s infinite;
+}
+@keyframes placeholderLoading {
+    from {
+        left: -100%;
+    } to {
+        left:100%;
+    }
+}
+.mealtime-amount-placeholder {
+    width:75px;
+    height:0.9em;
+    margin-top: 5px;
+    border-radius: 6px;
+    background-color: rgb(223, 223, 223);
+    position: relative;
+    overflow: hidden;
+}
+.mealtime-kcal-placeholder {
+    width:30px;
+    height:1.1em;
+    margin-top: 5px;
+    border-radius: 6px;
+    background-color: rgb(223, 223, 223);
+    position: relative;
+    overflow: hidden;
 }

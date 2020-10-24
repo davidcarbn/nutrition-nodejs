@@ -14,6 +14,9 @@ const FoodSchema = new mongoose.Schema({
     kcal: {
         type: Number
     },
+    carbohydrates: {
+        type: Number
+    },
     sugar: {
         type: Number
     },
@@ -21,6 +24,9 @@ const FoodSchema = new mongoose.Schema({
         type: Number
     },
     protein: {
+        type: Number
+    },
+    fats: {
         type: Number
     },
     saturatedFats: {
