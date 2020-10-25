@@ -15,6 +15,8 @@ import Settings from './Components/pages/Settings'
 import AddCustomFood from './Components/pages/Settings/CustomFood/AddCustomFood'
 import CustomFood from './Components/pages/Settings/CustomFood'
 import EditCustomFood from './Components/pages/Settings/CustomFood/EditCustomFood'
+import DashboardDetails from './Components/pages/Dashboard/Details';
+import RDA from './Components/pages/Settings/RDA';
 function App() {
   const { setIsAuthenticated, isAuthenticated, setUser } = useAuth()
   const [appLoading, setAppLoading] = useState(false)
@@ -64,6 +66,11 @@ function App() {
               redirectCond={() => !isAuthenticated}
             />
             <ProtectedRoute
+              exact path='/dashboard/details'
+              component={DashboardDetails}
+              redirectCond={() => !isAuthenticated}
+            />
+            <ProtectedRoute
               exact path='/food/search'
               component={Search}
               redirectCond={() => !isAuthenticated}
@@ -96,6 +103,11 @@ function App() {
             <ProtectedRoute
               exact path='/settings/customFood/edit'
               component={EditCustomFood}
+              redirectCond={() => !isAuthenticated}
+            />
+            <ProtectedRoute
+              exact path='/settings/rda'
+              component={RDA}
               redirectCond={() => !isAuthenticated}
             />
             <Route

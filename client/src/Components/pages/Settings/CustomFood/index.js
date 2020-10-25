@@ -1,6 +1,10 @@
 import Axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import Container from '../../../Containers/Container'
+import ContainerChild from '../../../Containers/Container/ContainerChild'
+import LayoutContainer from '../../../Containers/LayoutContainer'
+import LayoutContainerChild from '../../../Containers/LayoutContainer/LayoutContainerChild'
+import Content from '../../../Content'
 import Header from '../../../Header'
 import Button from '../../../Header/Button'
 import ButtonList from '../../../List/ButtonList'
@@ -44,9 +48,18 @@ const CustomFood = (props) => {
                     </svg>
                 </Button>
             </Header>
-            <Container>   
-                <ButtonList items={foodList} handleClick={handleClick} />
-            </Container>
+            <Content>
+                <LayoutContainer>
+                    <LayoutContainerChild>
+                        <Container>
+                            <ContainerChild>
+                                <ButtonList items={foodList} handleClick={handleClick} />
+                            </ContainerChild>
+                        </Container>
+                    </LayoutContainerChild>
+                </LayoutContainer>
+            </Content>
+
         </>
     )
 }

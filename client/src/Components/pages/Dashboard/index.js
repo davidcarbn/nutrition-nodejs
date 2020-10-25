@@ -15,26 +15,28 @@ import Food from '../../../objects/Food'
 const Dashboard = (props) => {
     const { currentDate, setCurrentDate } = useDate()
     const [diary, setDiary] = useState(new Map())
-    
+
     const [loading, setLoading] = useState(false)
-    const [foodSum,setFoodSum] = useState(new Food())
-    
+    const [foodSum, setFoodSum] = useState(new Food())
+
     const sumAllFood = () => {
         let diaryEntry = diary.get(new Date(currentDate).toISOString())
         if (!diaryEntry) {
             return new Food()
         }
         const allFood = diaryEntry.breakfast.concat(diaryEntry.lunch).concat(diaryEntry.dinner).concat(diaryEntry.snacks)
-        const FoodProps = ["kcal","protein","fats","carbohydrates"]
-        const sum = allFood.reduce((prev,cur) => {
+        const FoodProps = ["name", "kcal", "protein","carbohydrates", "sugar", "fiber","fats", "saturatedFats", "transFats", "polyunsaturatedFats", "monounsaturatedFats",
+            "potassium","phosphate","calcium","sodium","vitamineA","vitamineB1","vitamineB2","vitamineB3","vitamineB5","vitamineB6",
+            "vitamineB7","vitamineB9","vitamineB12","vitamineC","vitamineD","vitamineE","vitamineK"]
+        const sum = allFood.reduce((prev, cur) => {
             FoodProps.forEach((prop) => {
-                prev[prop] += (cur.food[prop]*cur.amount/100)
+                prev[prop] += (cur.food[prop] * cur.amount / 100)
             })
             return prev
-        },new Food())
+        }, new Food())
         return sum
     }
-    
+
     const stateMutate = useRef(true)
 
     let dateString = new Intl.DateTimeFormat('de-DE', {
@@ -91,7 +93,7 @@ const Dashboard = (props) => {
             setFoodSum(sumAllFood())
         }
 
-    }, [currentDate, diary, loading])
+    }, [currentDate, diary])
 
     const prevDay = (event) => {
 
@@ -155,6 +157,11 @@ const Dashboard = (props) => {
                                     <Nutrient name="Fette" amount={foodSum.fats} unit="g" />
                                     <Nutrient name="Eiweiß" amount={foodSum.protein} unit="g" />
                                 </Container>
+                                <Container flexRow justifyCenter>
+                                    <Button target="/dashboard/details" state={{food:foodSum}}>Alle Nährwerte anzeigen</Button>
+                                </Container>
+
+
                             </ContainerChild>
                         </Container>
                     </LayoutContainerChild>
@@ -166,7 +173,7 @@ const Dashboard = (props) => {
                                     mealtime={"breakfast"}
                                     title="Frühstück"
                                     content={getDiaryByDate() ? diary.get(new Date(currentDate).toISOString()).breakfast : []}
-                                    
+
                                     onEdit={redirectToEditPage}
                                 />
                             </ContainerChild>
@@ -176,7 +183,7 @@ const Dashboard = (props) => {
                                     mealtime={"lunch"}
                                     title="Mittagessen"
                                     content={getDiaryByDate() ? diary.get(new Date(currentDate).toISOString()).lunch : []}
-                                    
+
                                     onEdit={redirectToEditPage}
                                 />
                             </ContainerChild>
@@ -186,7 +193,7 @@ const Dashboard = (props) => {
                                     mealtime={"dinner"}
                                     title="Abendessen"
                                     content={getDiaryByDate() ? diary.get(new Date(currentDate).toISOString()).dinner : []}
-                                    
+
                                     onEdit={redirectToEditPage}
                                 />
                             </ContainerChild>
@@ -196,7 +203,7 @@ const Dashboard = (props) => {
                                     mealtime={"snacks"}
                                     title="Snacks"
                                     content={getDiaryByDate() ? diary.get(new Date(currentDate).toISOString()).snacks : []}
-                                    
+
                                     onEdit={redirectToEditPage}
                                 />
                             </ContainerChild>

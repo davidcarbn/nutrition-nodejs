@@ -48,7 +48,11 @@ const rolesCatalog = {
         },
         {
             route: new RegExp('^\/api(\/v\\d+)?\/search\/.+$'),
-            methods: ["POST",]
+            methods: ["POST"]
+        },
+        {
+            route: new RegExp('^\/api(\/v\\d+)?\/rda\/?$'),
+            methods: ["GET","PUT"]
         }]
     },
     admin: {

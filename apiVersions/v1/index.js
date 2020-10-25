@@ -7,6 +7,7 @@ import assignUser from './middleware/assignUser'
 import searchController from './controllers/searchController'
 import authorization from './middleware/authorization'
 import adminController from './controllers/adminController'
+import RDAController from './controllers/RDAController'
 
 
 const v1 = express.Router()
@@ -18,5 +19,5 @@ v1.use('/food',foodController)
 v1.use('/diary',diaryController)
 v1.use('/search',searchController)
 v1.use('/admin',adminController)
-
+v1.use('/rda', RDAController)
 export default v1

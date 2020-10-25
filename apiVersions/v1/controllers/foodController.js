@@ -5,21 +5,14 @@ import Food from '../../../models/Food'
 const foodController = express.Router()
 const insertFood = async (req, res) => {
     try {
-        const { name, kcal, protein,carbohydrates, sugar, fiber,fats, saturatedFats, transFats, polyunsaturatedFats, monounsaturatedFats } = req.body
+        const { name, kcal, protein,carbohydrates, sugar, fiber,fats, saturatedFats, transFats, polyunsaturatedFats, monounsaturatedFats,
+            potassium,phosphate,calcium,sodium,vitamineA,vitamineB1,vitamineB2,vitamineB3,vitamineB5,vitamineB6,
+            vitamineB7,vitamineB9,vitamineB12,vitamineC,vitamineD,vitamineE,vitamineK } = req.body
         const payload = {
             user: req.user.id,
-            name,
-            kcal,
-            protein,
-            carbohydrates,
-            sugar,
-            fiber,
-            fats,
-            saturatedFats,
-            transFats,
-            polyunsaturatedFats,
-            monounsaturatedFats
-        }
+            name, kcal, protein,carbohydrates, sugar, fiber,fats, saturatedFats, transFats, polyunsaturatedFats, monounsaturatedFats,
+                potassium,phosphate,calcium,sodium,vitamineA,vitamineB1,vitamineB2,vitamineB3,vitamineB5,vitamineB6,
+                vitamineB7,vitamineB9,vitamineB12,vitamineC,vitamineD,vitamineE,vitamineK }
         const food = await Food.create(payload)
         res.status(200).json({ food: food })
     } catch (error) {
@@ -30,20 +23,12 @@ const insertFood = async (req, res) => {
 const updateFoodById = async (req, res) => {
     try {
         const { id } = req.params
-        const { name, kcal, protein,carbohydrates, sugar, fiber,fats, saturatedFats, transFats, polyunsaturatedFats, monounsaturatedFats } = req.body
-        const payload = {
-            name,
-            kcal,
-            protein,
-            carbohydrates,
-            sugar,
-            fiber,
-            fats,
-            saturatedFats,
-            transFats,
-            polyunsaturatedFats,
-            monounsaturatedFats
-        }
+        const { name, kcal, protein,carbohydrates, sugar, fiber,fats, saturatedFats, transFats, polyunsaturatedFats, monounsaturatedFats,
+            potassium,phosphate,calcium,sodium,vitamineA,vitamineB1,vitamineB2,vitamineB3,vitamineB5,vitamineB6,
+            vitamineB7,vitamineB9,vitamineB12,vitamineC,vitamineD,vitamineE,vitamineK } = req.body
+        const payload = { name, kcal, protein,carbohydrates, sugar, fiber,fats, saturatedFats, transFats, polyunsaturatedFats, monounsaturatedFats,
+            potassium,phosphate,calcium,sodium,vitamineA,vitamineB1,vitamineB2,vitamineB3,vitamineB5,vitamineB6,
+            vitamineB7,vitamineB9,vitamineB12,vitamineC,vitamineD,vitamineE,vitamineK }
         const food = await Food.findOneAndUpdate({ _id: id }, payload)
         res.status(200).json({ food: food })
     } catch (error) {

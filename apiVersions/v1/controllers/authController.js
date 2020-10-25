@@ -32,7 +32,7 @@ const login = async (req,res) => {
             httpOnly: true,
             secure:  process.env.DEV ? false : true,
         })
-        res.cookie('logged',accessToken, {
+        res.cookie('logged',"true", {
             maxAge:60*60*24*1000,
             httpOnly: false,
             secure:  process.env.DEV ? false : true,

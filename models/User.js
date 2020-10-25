@@ -1,4 +1,5 @@
 import mongoose from 'mongoose'
+import RDA from './RDA'
 
 const UserSchema = new mongoose.Schema({
     email: {
@@ -18,6 +19,10 @@ const UserSchema = new mongoose.Schema({
         type: Date,
         default: Date.now
     }
+})
+UserSchema.post('save',(doc) => {
+    console.log(doc)
+    RDA.create({user: doc._id})
 })
 
 export default mongoose.models.User || mongoose.model('User',UserSchema)
