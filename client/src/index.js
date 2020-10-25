@@ -10,11 +10,7 @@ ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <AuthProvider>
-        <>
-        
-        <div>Scale Text</div>
         <App />
-        </>
       </AuthProvider>
     </BrowserRouter>
   </React.StrictMode>,
