@@ -6,7 +6,7 @@ body {
   margin: 0;
   background-color: rgba(249, 249, 249, 1);
   font-family: Nunito;
-  font-size: 16px;
+  font-size: clamp(16px,4vw,28px);
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
