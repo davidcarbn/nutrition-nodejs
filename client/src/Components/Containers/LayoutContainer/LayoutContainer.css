@@ -8,6 +8,6 @@
 @media screen and (min-width: 1000px) {
     .layout-container {
         margin: 0 auto;
-        width: clamp(280px, 920px, 100vw);
+        width: clamp(280px, 55.5em, 100vw);
     }
 }
