@@ -17,8 +17,8 @@ const FoodDetails = ({ food, setFood, amount = 100, asInput,showName = true }) =
     }
     return (
         <>
-            {showName ? (<Container>
-                <ContainerChild>
+            
+            {showName ? (
                     <LabelInput
                     type="text"
                     label="Name"
@@ -27,13 +27,11 @@ const FoodDetails = ({ food, setFood, amount = 100, asInput,showName = true }) =
                     onChange={updateFood}
                     value={food.name}
                     disabled={!asInput}
-                />
-                </ContainerChild>
-                
-            </Container>) : ""}
+                /> 
+            ) : ""}
             
 
-            <div className="table-container">
+            
                 <ul className="nutrition-list">
                     <li className="nutrition-list-item">
                         <div className="nutrition-list-name">
@@ -523,7 +521,7 @@ const FoodDetails = ({ food, setFood, amount = 100, asInput,showName = true }) =
                         </div>
                     </li>
                 </ul>
-            </div>
+            
         </>
     )
 }

@@ -6,8 +6,8 @@
 }
 .nutrient-circle {
     position: relative;
-    height:60px;
-    width:60px;
+    height:3.75em;
+    width:3.75em;
     border: 3px solid blue;
     border-radius: 50%;
     display:grid;
@@ -16,13 +16,13 @@
 }
 .nutrient-amount {
     font-weight:700;
-    font-size:18px;
+    font-size:1.125em;
     line-height: 18px;
 }
 .nutrient-unit {
     font-weight:200;
-    font-size: 14px;
-    line-height: 14px;
+    font-size: 0.875em;
+    line-height: 0.9em;
 }
 .nutrient-name {
     margin:2.5px;
