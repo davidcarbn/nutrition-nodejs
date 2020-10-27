@@ -3,10 +3,12 @@
     margin:0 auto;
 }
 .flex-row {
+    display: -webkit-flex;
     display:flex;
     flex-direction: row;
 }
 .flex-col {
+    display: -webkit-flex;
     display:flex;
     flex-direction: column;
 }

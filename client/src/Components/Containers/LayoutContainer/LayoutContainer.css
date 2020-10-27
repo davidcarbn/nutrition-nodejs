@@ -1,6 +1,7 @@
 .layout-container {
     width: clamp(280px, 550px, 100vw);
     margin: 0 auto;
+    display: -webkit-flex;
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
