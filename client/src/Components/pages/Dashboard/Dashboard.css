@@ -3,8 +3,9 @@
     align-items: center;
     font-weight:700;
     font-size: 1em;
-    line-height: 16px;
+    line-height: 1em;
     color: #343540;
+    justify-content: space-evenly;
 }
 .date-selector button {
     background: transparent;

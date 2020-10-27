@@ -1,13 +1,18 @@
 import Axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import Food from '../../../../../objects/Food'
+import Container from '../../../../Containers/Container'
+import ContainerChild from '../../../../Containers/Container/ContainerChild'
+import LayoutContainer from '../../../../Containers/LayoutContainer'
+import LayoutContainerChild from '../../../../Containers/LayoutContainer/LayoutContainerChild'
+import Content from '../../../../Content'
 import FoodDetails from '../../../../Food/FoodDetails'
 import Header from '../../../../Header'
 import Button from '../../../../Header/Button'
 
 const EditCustomFood = (props) => {
-    const [food,setFood] = useState(new Food())
-    const [loading,setLoading] = useState(false)
+    const [food, setFood] = useState(new Food())
+    const [loading, setLoading] = useState(false)
     useEffect(() => {
         const fetchCustomFood = async () => {
             const res = await Axios.request({
@@ -19,7 +24,7 @@ const EditCustomFood = (props) => {
             setFood(new Food(food))
         }
         fetchCustomFood()
-    },[])
+    }, [])
 
     const handleSubmit = async () => {
         try {
@@ -45,7 +50,7 @@ const EditCustomFood = (props) => {
             const res = await Axios.request({
                 method: "DELETE",
                 baseURL: process.env.REACT_APP_BASE_URL,
-                url: '/api/v1/food/'+props.location.state.foodid
+                url: '/api/v1/food/' + props.location.state.foodid
             })
             setLoading(false)
             props.history.push('/settings/customFood')
@@ -67,12 +72,24 @@ const EditCustomFood = (props) => {
                     </div>
                 </Button>
             </Header>
-            <FoodDetails
-                food={food}
-                setFood={setFood}
-                asInput
-            />
-            <input className="btn-delete" type="submit" onClick={deleteEntry} value="Eintrag löschen" />
+            <Content>
+                <LayoutContainer>
+                    <LayoutContainerChild>
+                        <Container>
+                            <ContainerChild>
+                                <FoodDetails
+                                food={food}
+                                setFood={setFood}
+                                asInput
+                            />
+                            <input className="btn-delete" type="submit" onClick={deleteEntry} value="Eintrag löschen" />
+                            </ContainerChild>
+                            
+                        </Container>
+                    </LayoutContainerChild>
+                </LayoutContainer>
+            </Content>
+
         </>
     )
 }

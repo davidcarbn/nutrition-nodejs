@@ -1,6 +1,10 @@
 import Axios from 'axios'
 import React, { useState } from 'react'
 import Food from '../../../../../objects/Food'
+import Container from '../../../../Containers/Container'
+import LayoutContainer from '../../../../Containers/LayoutContainer'
+import LayoutContainerChild from '../../../../Containers/LayoutContainer/LayoutContainerChild'
+import Content from '../../../../Content'
 import FoodDetails from '../../../../Food/FoodDetails'
 import Header from '../../../../Header'
 import Button from '../../../../Header/Button'
@@ -8,8 +12,8 @@ import Button from '../../../../Header/Button'
 
 const AddCustomFood = (props) => {
 
-    const [food,setFood] = useState(new Food())
-    console.log("addComp",food)
+    const [food, setFood] = useState(new Food())
+    console.log("addComp", food)
 
     const handleSubmit = async () => {
         try {
@@ -40,13 +44,21 @@ const AddCustomFood = (props) => {
                     </div>
                 </Button>
             </Header>
-           
-            <FoodDetails 
-                food={food}
-                setFood={setFood}
-                asInput
-            />
-            
+            <Content>
+                <LayoutContainer>
+                    <LayoutContainerChild>
+                        <Container>
+                            <FoodDetails
+                                food={food}
+                                setFood={setFood}
+                                asInput
+                            />
+                        </Container>
+                    </LayoutContainerChild>
+                </LayoutContainer>
+            </Content>
+
+
         </>
     )
 }
