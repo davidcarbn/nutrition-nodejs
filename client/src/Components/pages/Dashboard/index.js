@@ -168,7 +168,7 @@ const Dashboard = (props) => {
                             </ContainerChild>
                         </Container>
                     </LayoutContainerChild>
-                    <LayoutContainerChild width="550px" leftBottom>
+                    <LayoutContainerChild width="30em" leftBottom>
                         <Container>
                         
                             <ContainerChild >
