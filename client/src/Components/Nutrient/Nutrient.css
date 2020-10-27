@@ -17,12 +17,12 @@
 .nutrient-amount {
     font-weight:700;
     font-size:1.125em;
-    line-height: 18px;
+    line-height: 1.125em;
 }
 .nutrient-unit {
     font-weight:200;
     font-size: 0.875em;
-    line-height: 0.9em;
+    line-height: 1em;
 }
 .nutrient-name {
     margin:2.5px;

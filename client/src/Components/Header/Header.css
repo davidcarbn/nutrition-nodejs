@@ -1,5 +1,6 @@
 .header {
     width:100%;
+    min-height:3.5em;
     background:#fff;
     display:flex;
     align-items: center;
@@ -11,8 +12,8 @@
     box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.16);
 }
 .btn-header {
-    height:2.85em;
-    min-width:2.85em;
+    height:3.5em;
+    min-width:3.5em;
     display:grid;
     place-items: center;
     color: #343540;
@@ -20,8 +21,8 @@
     border:none;
 }
 .btn-header svg {
-    height:15px;
-    width:15px;
+    height:1.125em;
+    width:1.125em;
 }
 .btn-header .save {
     padding: 0 10px;
