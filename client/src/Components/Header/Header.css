@@ -1,6 +1,6 @@
 .header {
     width:100%;
-    min-height:3.5em;
+    height:3.5em;
     background:#fff;
     display:flex;
     align-items: center;
@@ -27,5 +27,6 @@
 .btn-header .save {
     padding: 0 10px;
     font-weight: 600;
+    font-size:1em;
     color: #1A73E8;
 }
