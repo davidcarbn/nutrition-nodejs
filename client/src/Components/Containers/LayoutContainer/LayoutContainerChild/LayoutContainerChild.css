@@ -8,7 +8,7 @@
 .bottom-left {
     order: 2;
 }
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 64em) {
     .layout-container-child {
         margin:15px;
     }

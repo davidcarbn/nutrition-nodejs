@@ -5,9 +5,9 @@
     flex-wrap: wrap;
     align-items: flex-start;
 }
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 64em) {
     .layout-container {
         margin: 0 auto;
-        width: clamp(280px, 55.5em, 100vw);
+        width: clamp(280px, 920px, 100vw);
     }
 }
