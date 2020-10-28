@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useState } from 'react'
+import Food from '../../../../objects/Food'
 import Container from '../../../Containers/Container'
 import ContainerChild from '../../../Containers/Container/ContainerChild'
 import LayoutContainer from '../../../Containers/LayoutContainer'
@@ -9,6 +10,7 @@ import Header from '../../../Header'
 import Button from '../../../Header/Button'
 
 const DashboardDetails = (props) => {
+    
     const food = props.location.state.food
     return (
         <>

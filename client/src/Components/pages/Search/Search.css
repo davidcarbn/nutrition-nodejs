@@ -21,15 +21,14 @@
     width:100%;
     background: transparent;
     border:none;
-    padding:10px 30px;
+    padding: 15px;
     display:flex;
     justify-content: space-between;
 }
 .result-heading {
-    background:#1A73E8;
-    color:#fff;
-    padding:5px 20px;
-    font-size:0.8em;
+    
+    font-size:1.25em;
+    font-weight: 600;
     box-sizing: border-box;
 }
 .no-result {

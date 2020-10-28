@@ -48,7 +48,7 @@ const RDA = props => {
                 <LayoutContainer>
                     <LayoutContainerChild>
                         <Container>
-                            <FoodDetails food={food} showName={false} asInput/>
+                            <FoodDetails food={food} setFood={setFood} showName={false} asInput/>
                         </Container>
                     </LayoutContainerChild>
                 </LayoutContainer>

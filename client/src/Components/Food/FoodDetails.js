@@ -48,6 +48,7 @@ const FoodDetails = ({ food, setFood, amount = 100, asInput,showName = true }) =
                                     data-key="kcal"
                                     onChange={updateFood}
                                     value={asInput ? food.kcal : food.kcal * amount / 100}
+                                    placeholder="0"
                                     disabled={!asInput}
                                 />
                                 <div className="nutrition-nutrient-unit">kcal</div>
@@ -64,6 +65,7 @@ const FoodDetails = ({ food, setFood, amount = 100, asInput,showName = true }) =
                                     inputMode="decimal"
                                     data-key="protein"
                                     value={asInput? food.protein : food.protein * amount / 100}
+                                    placeholder="0"
                                     onChange={updateFood}
                                     disabled={!asInput}
                                 />
@@ -81,6 +83,7 @@ const FoodDetails = ({ food, setFood, amount = 100, asInput,showName = true }) =
                                     inputMode="decimal"
                                     data-key="carbohydrates"
                                     value={asInput ? food.carbohydrates : food.carbohydrates * amount / 100}
+                                    placeholder="0"
                                     onChange={updateFood}
                                     disabled={!asInput}
                                 />
@@ -98,6 +101,7 @@ const FoodDetails = ({ food, setFood, amount = 100, asInput,showName = true }) =
                                             inputMode="decimal"
                                             data-key="sugar"
                                             value={asInput ? food.sugar :food.sugar * amount / 100}
+                                            placeholder="0"
                                             onChange={updateFood}
                                             disabled={!asInput}
                                         />
@@ -115,6 +119,7 @@ const FoodDetails = ({ food, setFood, amount = 100, asInput,showName = true }) =
                                             inputMode="decimal"
                                             data-key="fiber"
                                             value={asInput ? food.fiber :food.fiber * amount / 100}
+                                            placeholder="0"
                                             onChange={updateFood}
                                             disabled={!asInput}
                                         />
@@ -134,7 +139,8 @@ const FoodDetails = ({ food, setFood, amount = 100, asInput,showName = true }) =
                                         inputMode="decimal"
                                         data-key="fats"
                                         value={asInput ? food.fats :food.fats * amount / 100}
-                                        onChange={updateFood}
+                                        placeholder="0"
+                                    onChange={updateFood}
                                         disabled={!asInput}
                                     />
                                 <div className="nutrition-nutrient-unit">g</div>
@@ -151,7 +157,8 @@ const FoodDetails = ({ food, setFood, amount = 100, asInput,showName = true }) =
                                             inputMode="decimal"
                                             data-key="saturatedFats"
                                             value={asInput ? food.saturatedFats :food.saturatedFats * amount / 100}
-                                            onChange={updateFood}
+                                            placeholder="0"
+                                    onChange={updateFood}
                                             disabled={!asInput}
                                         />
                                         <div className="nutrition-nutrient-unit">g</div>
@@ -168,7 +175,8 @@ const FoodDetails = ({ food, setFood, amount = 100, asInput,showName = true }) =
                                             inputMode="decimal"
                                             data-key="transFats"
                                             value={asInput ? food.transFats :food.transFats * amount / 100}
-                                            onChange={updateFood}
+                                            placeholder="0"
+                                    onChange={updateFood}
                                             disabled={!asInput}
                                         />
                                         <div className="nutrition-nutrient-unit">g</div>
@@ -185,7 +193,8 @@ const FoodDetails = ({ food, setFood, amount = 100, asInput,showName = true }) =
                                             inputMode="decimal"
                                             data-key="polyunsaturatedFats"
                                             value={asInput ? food.polyunsaturatedFats :food.polyunsaturatedFats * amount / 100}
-                                            onChange={updateFood}
+                                            placeholder="0"
+                                    onChange={updateFood}
                                             disabled={!asInput}
                                         />
                                         <div className="nutrition-nutrient-unit">g</div>
@@ -202,7 +211,8 @@ const FoodDetails = ({ food, setFood, amount = 100, asInput,showName = true }) =
                                             inputMode="decimal"
                                             data-key="monounsaturatedFats"
                                             value={asInput ? food.monounsaturatedFats :food.monounsaturatedFats * amount / 100}
-                                            onChange={updateFood}
+                                            placeholder="0"
+                                    onChange={updateFood}
                                             disabled={!asInput}
                                         />
                                         <div className="nutrition-nutrient-unit">g</div>
@@ -224,6 +234,7 @@ const FoodDetails = ({ food, setFood, amount = 100, asInput,showName = true }) =
                                     data-key="potassium"
                                     onChange={updateFood}
                                     value={asInput ? food.potassium :food.potassium * amount / 100}
+                                    placeholder="0"
                                     disabled={!asInput}
                                 />
                                 <div className="nutrition-nutrient-unit">mg</div>
@@ -240,6 +251,7 @@ const FoodDetails = ({ food, setFood, amount = 100, asInput,showName = true }) =
                                     inputMode="decimal"
                                     data-key="phosphate"
                                     value={asInput ? food.phosphate :food.phosphate * amount / 100}
+                                    placeholder="0"
                                     onChange={updateFood}
                                     disabled={!asInput}
                                 />
@@ -257,6 +269,7 @@ const FoodDetails = ({ food, setFood, amount = 100, asInput,showName = true }) =
                                     inputMode="decimal"
                                     data-key="calcium"
                                     value={asInput ? food.calcium :food.calcium * amount / 100}
+                                    placeholder="0"
                                     onChange={updateFood}
                                     disabled={!asInput}
                                 />
@@ -274,6 +287,7 @@ const FoodDetails = ({ food, setFood, amount = 100, asInput,showName = true }) =
                                     inputMode="decimal"
                                     data-key="sodium"
                                     value={asInput ? food.sodium :food.sodium * amount / 100}
+                                    placeholder="0"
                                     onChange={updateFood}
                                     disabled={!asInput}
                                 />
@@ -294,6 +308,7 @@ const FoodDetails = ({ food, setFood, amount = 100, asInput,showName = true }) =
                                     inputMode="decimal"
                                     data-key="vitamineA"
                                     value={asInput ? food.vitamineA :food.vitamineA * amount / 100}
+                                    placeholder="0"
                                     onChange={updateFood}
                                     disabled={!asInput}
                                 />
@@ -327,7 +342,8 @@ const FoodDetails = ({ food, setFood, amount = 100, asInput,showName = true }) =
                                             inputMode="decimal"
                                             data-key="vitamineB1"
                                             value={asInput ? food.vitamineB1 :food.vitamineB1 * amount / 100}
-                                            onChange={updateFood}
+                                            placeholder="0"
+                                    onChange={updateFood}
                                             disabled={!asInput}
                                         />
                                         <div className="nutrition-nutrient-unit">mg</div>
@@ -344,7 +360,8 @@ const FoodDetails = ({ food, setFood, amount = 100, asInput,showName = true }) =
                                             inputMode="decimal"
                                             data-key="vitamineB2"
                                             value={asInput ? food.vitamineB2 :food.vitamineB2 * amount / 100}
-                                            onChange={updateFood}
+                                            placeholder="0"
+                                    onChange={updateFood}
                                             disabled={!asInput}
                                         />
                                         <div className="nutrition-nutrient-unit">mg</div>
@@ -361,7 +378,8 @@ const FoodDetails = ({ food, setFood, amount = 100, asInput,showName = true }) =
                                             inputMode="decimal"
                                             data-key="vitamineB3"
                                             value={asInput ? food.vitamineB3 :food.vitamineB3 * amount / 100}
-                                            onChange={updateFood}
+                                            placeholder="0"
+                                    onChange={updateFood}
                                             disabled={!asInput}
                                         />
                                         <div className="nutrition-nutrient-unit">mg</div>
@@ -378,7 +396,8 @@ const FoodDetails = ({ food, setFood, amount = 100, asInput,showName = true }) =
                                             inputMode="decimal"
                                             data-key="vitamineB5"
                                             value={asInput ? food.vitamineB5 :food.vitamineB5 * amount / 100}
-                                            onChange={updateFood}
+                                            placeholder="0"
+                                    onChange={updateFood}
                                             disabled={!asInput}
                                         />
                                         <div className="nutrition-nutrient-unit">mg</div>
@@ -395,7 +414,8 @@ const FoodDetails = ({ food, setFood, amount = 100, asInput,showName = true }) =
                                             inputMode="decimal"
                                             data-key="vitamineB6"
                                             value={asInput ? food.vitamineB6 :food.vitamineB6 * amount / 100}
-                                            onChange={updateFood}
+                                            placeholder="0"
+                                    onChange={updateFood}
                                             disabled={!asInput}
                                         />
                                         <div className="nutrition-nutrient-unit">mg</div>
@@ -412,7 +432,8 @@ const FoodDetails = ({ food, setFood, amount = 100, asInput,showName = true }) =
                                             inputMode="decimal"
                                             data-key="vitamineB7"
                                             value={asInput ? food.vitamineB7 :food.vitamineB7 * amount / 100}
-                                            onChange={updateFood}
+                                            placeholder="0"
+                                    onChange={updateFood}
                                             disabled={!asInput}
                                         />
                                         <div className="nutrition-nutrient-unit">mg</div>
@@ -429,7 +450,8 @@ const FoodDetails = ({ food, setFood, amount = 100, asInput,showName = true }) =
                                             inputMode="decimal"
                                             data-key="vitamineB9"
                                             value={asInput ? food.vitamineB9 :food.vitamineB9 * amount / 100}
-                                            onChange={updateFood}
+                                            placeholder="0"
+                                    onChange={updateFood}
                                             disabled={!asInput}
                                         />
                                         <div className="nutrition-nutrient-unit">mg</div>
@@ -446,7 +468,8 @@ const FoodDetails = ({ food, setFood, amount = 100, asInput,showName = true }) =
                                             inputMode="decimal"
                                             data-key="vitamineB12"
                                             value={asInput ? food.vitamineB12 :food.vitamineB12 * amount / 100}
-                                            onChange={updateFood}
+                                            placeholder="0"
+                                    onChange={updateFood}
                                             disabled={!asInput}
                                         />
                                         <div className="nutrition-nutrient-unit">mg</div>
@@ -465,6 +488,7 @@ const FoodDetails = ({ food, setFood, amount = 100, asInput,showName = true }) =
                                     inputMode="decimal"
                                     data-key="vitamineC"
                                     value={asInput ? food.vitamineC :food.vitamineC * amount / 100}
+                                    placeholder="0"
                                     onChange={updateFood}
                                     disabled={!asInput}
                                 />
@@ -482,6 +506,7 @@ const FoodDetails = ({ food, setFood, amount = 100, asInput,showName = true }) =
                                     inputMode="decimal"
                                     data-key="vitamineD"
                                     value={asInput ? food.vitamineD :food.vitamineD * amount / 100}
+                                    placeholder="0"
                                     onChange={updateFood}
                                     disabled={!asInput}
                                 />
@@ -499,6 +524,7 @@ const FoodDetails = ({ food, setFood, amount = 100, asInput,showName = true }) =
                                     inputMode="decimal"
                                     data-key="vitamineE"
                                     value={asInput ? food.vitamineE :food.vitamineE * amount / 100}
+                                    placeholder="0"
                                     onChange={updateFood}
                                     disabled={!asInput}
                                 />
@@ -516,6 +542,7 @@ const FoodDetails = ({ food, setFood, amount = 100, asInput,showName = true }) =
                                     inputMode="decimal"
                                     data-key="vitamineK"
                                     value={asInput ? food.vitamineK :food.vitamineK * amount / 100}
+                                    placeholder="0"
                                     onChange={updateFood}
                                     disabled={!asInput}
                                 />

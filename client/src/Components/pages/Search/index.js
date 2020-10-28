@@ -95,7 +95,7 @@ const Search = (props) => {
                                 <ul className="search-result">
                                     <div className="result-heading">
                                         Vorschläge
-            </div>
+                                    </div>
                                     {result.length ?
                                         result.map((listItem) => (
                                             <li>
