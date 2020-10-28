@@ -135,7 +135,7 @@ const Dashboard = (props) => {
             </Header>
             <Content>
                 <LayoutContainer>
-                    <LayoutContainerChild topRight>
+                    <LayoutContainerChild>
                         <Container>
                         <ContainerChild>
                             <div className="date-selector">
@@ -166,10 +166,7 @@ const Dashboard = (props) => {
 
 
                             </ContainerChild>
-                        </Container>
-                    </LayoutContainerChild>
-                    <LayoutContainerChild width="30em" leftBottom>
-                        <Container>
+                        
                         
                             <ContainerChild >
                                 <DiaryList

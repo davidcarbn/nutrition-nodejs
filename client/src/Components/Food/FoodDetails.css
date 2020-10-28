@@ -7,7 +7,8 @@
     padding:0; 
 }
 .nutrition-nutrient {
-    font-weight: 600;
+    font-size:1em;
+    font-weight:600;
 }
 .nutrition-nutrient-quantity {
     width:120px;
@@ -26,6 +27,7 @@
 .nutrition-nutrient-unit {
     width:60px;
     text-align: center;
+    font-size:1em;
     font-weight: 300;
 }
 
@@ -42,6 +44,7 @@
 }
 .nutrition-sub-list .nutrition-nutrient {
     font-weight:400;
+    
 }
 
 .nutrition-list-name {
