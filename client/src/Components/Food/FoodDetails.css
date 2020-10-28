@@ -11,13 +11,13 @@
     font-weight:600;
 }
 .nutrition-nutrient-quantity {
-    width:120px;
+    width:7em;
     display:flex;
     align-items: baseline;
 }
 .nutrition-nutrient-value {
     text-align: end;
-    width:60px;
+    width:3.5em;
     background:transparent;
     border:none;
     font-size:1em;
@@ -25,7 +25,7 @@
     border-radius:4px;
 }
 .nutrition-nutrient-unit {
-    width:60px;
+    width:3.5em;
     text-align: center;
     font-size:1em;
     font-weight: 300;
