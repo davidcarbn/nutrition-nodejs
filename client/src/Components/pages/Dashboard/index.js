@@ -179,8 +179,9 @@ const Dashboard = (props) => {
                                     <Nutrient name="Eiweiß" amount={foodSum.protein} unit="g" rda={rda.protein || 0} />
                                 </Container>
                                 <Container flexRow justifyCenter>
-                                    <Link to={{pathname:"/dashboard/details",
-                                        state:{food:foodSum}}}
+                                    <Link
+                                        to={{pathname:"/dashboard/details",state:{food:foodSum}}}
+                                        className="sum-link"
                                     >Alle Nährwerte anzeigen</Link>
                                 </Container>
 
@@ -190,7 +191,7 @@ const Dashboard = (props) => {
                         
                             <ContainerChild >
                                 <DiaryList
-                                    loading={loading}
+                                    loading={getDiaryByDate() ? false : loading}
                                     mealtime={"breakfast"}
                                     title="Frühstück"
                                     content={getDiaryByDate() ? diary.get(new Date(currentDate).toISOString()).breakfast : []}
@@ -200,7 +201,7 @@ const Dashboard = (props) => {
                             </ContainerChild>
                             <ContainerChild >
                                 <DiaryList
-                                    loading={loading}
+                                    loading={getDiaryByDate() ? false : loading}
                                     mealtime={"lunch"}
                                     title="Mittagessen"
                                     content={getDiaryByDate() ? diary.get(new Date(currentDate).toISOString()).lunch : []}
@@ -210,7 +211,7 @@ const Dashboard = (props) => {
                             </ContainerChild>
                             <ContainerChild >
                                 <DiaryList
-                                    loading={loading}
+                                    loading={getDiaryByDate() ? false : loading}
                                     mealtime={"dinner"}
                                     title="Abendessen"
                                     content={getDiaryByDate() ? diary.get(new Date(currentDate).toISOString()).dinner : []}
@@ -220,7 +221,7 @@ const Dashboard = (props) => {
                             </ContainerChild>
                             <ContainerChild >
                                 <DiaryList
-                                    loading={loading}
+                                    loading={getDiaryByDate() ? false : loading}
                                     mealtime={"snacks"}
                                     title="Snacks"
                                     content={getDiaryByDate() ? diary.get(new Date(currentDate).toISOString()).snacks : []}

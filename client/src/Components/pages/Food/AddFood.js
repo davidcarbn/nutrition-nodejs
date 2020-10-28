@@ -8,6 +8,10 @@ import FoodDetails from '../../Food/FoodDetails'
 import Container from '../../Containers/Container'
 import Food from '../../../objects/Food'
 import LabelInput from '../../Input/LabelInput'
+import Content from '../../Content'
+import LayoutContainer from '../../Containers/LayoutContainer'
+import LayoutContainerChild from '../../Containers/LayoutContainer/LayoutContainerChild'
+import ContainerChild from '../../Containers/Container/ContainerChild'
 
 const AddFood = (props) => {
     const { currentDate } = useDate()
@@ -72,28 +76,37 @@ const AddFood = (props) => {
                     </div>
                 </Button>
             </Header>
-            <Container>{
-                !food ? "Loading..." : (
-                    <>
+            <Content>
+                <LayoutContainer>
+                    <LayoutContainerChild>
                         <Container>
-                            <LabelInput
-                                type="number"
-                                inputmode="numeric"
-                                onChange={handleAmountChange}
-                                value={amount}
-                                label="Menge"
-                            />
+                            <ContainerChild>{
+                                !food ? "Loading..." : (
+                                    <>
+                                        <Container>
+                                            <LabelInput
+                                                type="number"
+                                                inputmode="numeric"
+                                                onChange={handleAmountChange}
+                                                value={amount}
+                                                label="Menge"
+                                            />
+                                        </Container>
+                                        <FoodDetails
+                                            food={food}
+                                            setFood={setFood}
+                                            amount={amount}
+                                        />
+                                    </>
+
+                                )}
+                            </ContainerChild>
+
                         </Container>
-                        <FoodDetails
-                            food={food}
-                            setFood={setFood}
-                            amount={amount}
-                        />
-                    </>
+                    </LayoutContainerChild>
+                </LayoutContainer>
+            </Content>
 
-                )}
-
-            </Container>
 
         </>
 

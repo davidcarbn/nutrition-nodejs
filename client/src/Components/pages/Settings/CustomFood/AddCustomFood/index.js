@@ -2,6 +2,7 @@ import Axios from 'axios'
 import React, { useState } from 'react'
 import Food from '../../../../../objects/Food'
 import Container from '../../../../Containers/Container'
+import ContainerChild from '../../../../Containers/Container/ContainerChild'
 import LayoutContainer from '../../../../Containers/LayoutContainer'
 import LayoutContainerChild from '../../../../Containers/LayoutContainer/LayoutContainerChild'
 import Content from '../../../../Content'
@@ -48,11 +49,14 @@ const AddCustomFood = (props) => {
                 <LayoutContainer>
                     <LayoutContainerChild>
                         <Container>
-                            <FoodDetails
+                            <ContainerChild>
+                                <FoodDetails
                                 food={food}
                                 setFood={setFood}
                                 asInput
-                            />
+                            /> 
+                            </ContainerChild>
+                           
                         </Container>
                     </LayoutContainerChild>
                 </LayoutContainer>

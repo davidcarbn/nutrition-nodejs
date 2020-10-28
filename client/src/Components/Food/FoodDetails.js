@@ -16,7 +16,7 @@ const FoodDetails = ({ food, setFood, amount = 100, asInput,showName = true }) =
             return;
         }
         
-        setFood(prevFood => ({ ...prevFood, [e.target.dataset.key]: value || 0 }))
+        setFood(prevFood => ({ ...prevFood, [e.target.dataset.key]: value }))
     }
     return (
         <>
@@ -80,7 +80,7 @@ const FoodDetails = ({ food, setFood, amount = 100, asInput,showName = true }) =
                                     type="text"
                                     inputMode="decimal"
                                     data-key="carbohydrates"
-                                    placeholder={asInput ? food.carbohydrates : food.carbohydrates * amount / 100}
+                                    value={asInput ? food.carbohydrates : food.carbohydrates * amount / 100}
                                     onChange={updateFood}
                                     disabled={!asInput}
                                 />
@@ -97,7 +97,7 @@ const FoodDetails = ({ food, setFood, amount = 100, asInput,showName = true }) =
                                             type="text"
                                             inputMode="decimal"
                                             data-key="sugar"
-                                            placeholder={asInput ? food.sugar :food.sugar * amount / 100}
+                                            value={asInput ? food.sugar :food.sugar * amount / 100}
                                             onChange={updateFood}
                                             disabled={!asInput}
                                         />
@@ -114,7 +114,7 @@ const FoodDetails = ({ food, setFood, amount = 100, asInput,showName = true }) =
                                             type="text"
                                             inputMode="decimal"
                                             data-key="fiber"
-                                            placeholder={asInput ? food.fiber :food.fiber * amount / 100}
+                                            value={asInput ? food.fiber :food.fiber * amount / 100}
                                             onChange={updateFood}
                                             disabled={!asInput}
                                         />
@@ -133,7 +133,7 @@ const FoodDetails = ({ food, setFood, amount = 100, asInput,showName = true }) =
                                         type="text"
                                         inputMode="decimal"
                                         data-key="fats"
-                                        placeholder={asInput ? food.fats :food.fats * amount / 100}
+                                        value={asInput ? food.fats :food.fats * amount / 100}
                                         onChange={updateFood}
                                         disabled={!asInput}
                                     />
@@ -150,7 +150,7 @@ const FoodDetails = ({ food, setFood, amount = 100, asInput,showName = true }) =
                                             type="text"
                                             inputMode="decimal"
                                             data-key="saturatedFats"
-                                            placeholder={asInput ? food.saturatedFats :food.saturatedFats * amount / 100}
+                                            value={asInput ? food.saturatedFats :food.saturatedFats * amount / 100}
                                             onChange={updateFood}
                                             disabled={!asInput}
                                         />
@@ -167,7 +167,7 @@ const FoodDetails = ({ food, setFood, amount = 100, asInput,showName = true }) =
                                             type="text"
                                             inputMode="decimal"
                                             data-key="transFats"
-                                            placeholder={asInput ? food.transFats :food.transFats * amount / 100}
+                                            value={asInput ? food.transFats :food.transFats * amount / 100}
                                             onChange={updateFood}
                                             disabled={!asInput}
                                         />
@@ -184,7 +184,7 @@ const FoodDetails = ({ food, setFood, amount = 100, asInput,showName = true }) =
                                             type="text"
                                             inputMode="decimal"
                                             data-key="polyunsaturatedFats"
-                                            placeholder={asInput ? food.polyunsaturatedFats :food.polyunsaturatedFats * amount / 100}
+                                            value={asInput ? food.polyunsaturatedFats :food.polyunsaturatedFats * amount / 100}
                                             onChange={updateFood}
                                             disabled={!asInput}
                                         />
@@ -201,7 +201,7 @@ const FoodDetails = ({ food, setFood, amount = 100, asInput,showName = true }) =
                                             type="text"
                                             inputMode="decimal"
                                             data-key="monounsaturatedFats"
-                                            placeholder={asInput ? food.monounsaturatedFats :food.monounsaturatedFats * amount / 100}
+                                            value={asInput ? food.monounsaturatedFats :food.monounsaturatedFats * amount / 100}
                                             onChange={updateFood}
                                             disabled={!asInput}
                                         />
@@ -223,7 +223,7 @@ const FoodDetails = ({ food, setFood, amount = 100, asInput,showName = true }) =
                                     inputMode="numeric"
                                     data-key="potassium"
                                     onChange={updateFood}
-                                    placeholder={asInput ? food.potassium :food.potassium * amount / 100}
+                                    value={asInput ? food.potassium :food.potassium * amount / 100}
                                     disabled={!asInput}
                                 />
                                 <div className="nutrition-nutrient-unit">mg</div>
@@ -293,7 +293,7 @@ const FoodDetails = ({ food, setFood, amount = 100, asInput,showName = true }) =
                                     type="text"
                                     inputMode="decimal"
                                     data-key="vitamineA"
-                                    placeholder={asInput ? food.vitamineA :food.vitamineA * amount / 100}
+                                    value={asInput ? food.vitamineA :food.vitamineA * amount / 100}
                                     onChange={updateFood}
                                     disabled={!asInput}
                                 />
@@ -326,7 +326,7 @@ const FoodDetails = ({ food, setFood, amount = 100, asInput,showName = true }) =
                                             type="text"
                                             inputMode="decimal"
                                             data-key="vitamineB1"
-                                            placeholder={asInput ? food.vitamineB1 :food.vitamineB1 * amount / 100}
+                                            value={asInput ? food.vitamineB1 :food.vitamineB1 * amount / 100}
                                             onChange={updateFood}
                                             disabled={!asInput}
                                         />
@@ -343,7 +343,7 @@ const FoodDetails = ({ food, setFood, amount = 100, asInput,showName = true }) =
                                             type="text"
                                             inputMode="decimal"
                                             data-key="vitamineB2"
-                                            placeholder={asInput ? food.vitamineB2 :food.vitamineB2 * amount / 100}
+                                            value={asInput ? food.vitamineB2 :food.vitamineB2 * amount / 100}
                                             onChange={updateFood}
                                             disabled={!asInput}
                                         />
@@ -360,7 +360,7 @@ const FoodDetails = ({ food, setFood, amount = 100, asInput,showName = true }) =
                                             type="text"
                                             inputMode="decimal"
                                             data-key="vitamineB3"
-                                            placeholder={asInput ? food.vitamineB3 :food.vitamineB3 * amount / 100}
+                                            value={asInput ? food.vitamineB3 :food.vitamineB3 * amount / 100}
                                             onChange={updateFood}
                                             disabled={!asInput}
                                         />
@@ -377,7 +377,7 @@ const FoodDetails = ({ food, setFood, amount = 100, asInput,showName = true }) =
                                             type="text"
                                             inputMode="decimal"
                                             data-key="vitamineB5"
-                                            placeholder={asInput ? food.vitamineB5 :food.vitamineB5 * amount / 100}
+                                            value={asInput ? food.vitamineB5 :food.vitamineB5 * amount / 100}
                                             onChange={updateFood}
                                             disabled={!asInput}
                                         />
@@ -394,7 +394,7 @@ const FoodDetails = ({ food, setFood, amount = 100, asInput,showName = true }) =
                                             type="text"
                                             inputMode="decimal"
                                             data-key="vitamineB6"
-                                            placeholder={asInput ? food.vitamineB6 :food.vitamineB6 * amount / 100}
+                                            value={asInput ? food.vitamineB6 :food.vitamineB6 * amount / 100}
                                             onChange={updateFood}
                                             disabled={!asInput}
                                         />
@@ -411,7 +411,7 @@ const FoodDetails = ({ food, setFood, amount = 100, asInput,showName = true }) =
                                             type="text"
                                             inputMode="decimal"
                                             data-key="vitamineB7"
-                                            placeholder={asInput ? food.vitamineB7 :food.vitamineB7 * amount / 100}
+                                            value={asInput ? food.vitamineB7 :food.vitamineB7 * amount / 100}
                                             onChange={updateFood}
                                             disabled={!asInput}
                                         />
@@ -428,7 +428,7 @@ const FoodDetails = ({ food, setFood, amount = 100, asInput,showName = true }) =
                                             type="text"
                                             inputMode="decimal"
                                             data-key="vitamineB9"
-                                            placeholder={asInput ? food.vitamineB9 :food.vitamineB9 * amount / 100}
+                                            value={asInput ? food.vitamineB9 :food.vitamineB9 * amount / 100}
                                             onChange={updateFood}
                                             disabled={!asInput}
                                         />
@@ -445,7 +445,7 @@ const FoodDetails = ({ food, setFood, amount = 100, asInput,showName = true }) =
                                             type="text"
                                             inputMode="decimal"
                                             data-key="vitamineB12"
-                                            placeholder={asInput ? food.vitamineB12 :food.vitamineB12 * amount / 100}
+                                            value={asInput ? food.vitamineB12 :food.vitamineB12 * amount / 100}
                                             onChange={updateFood}
                                             disabled={!asInput}
                                         />
@@ -464,7 +464,7 @@ const FoodDetails = ({ food, setFood, amount = 100, asInput,showName = true }) =
                                     type="text"
                                     inputMode="decimal"
                                     data-key="vitamineC"
-                                    placeholder={asInput ? food.vitamineC :food.vitamineC * amount / 100}
+                                    value={asInput ? food.vitamineC :food.vitamineC * amount / 100}
                                     onChange={updateFood}
                                     disabled={!asInput}
                                 />
@@ -481,7 +481,7 @@ const FoodDetails = ({ food, setFood, amount = 100, asInput,showName = true }) =
                                     type="text"
                                     inputMode="decimal"
                                     data-key="vitamineD"
-                                    placeholder={asInput ? food.vitamineD :food.vitamineD * amount / 100}
+                                    value={asInput ? food.vitamineD :food.vitamineD * amount / 100}
                                     onChange={updateFood}
                                     disabled={!asInput}
                                 />
@@ -498,7 +498,7 @@ const FoodDetails = ({ food, setFood, amount = 100, asInput,showName = true }) =
                                     type="text"
                                     inputMode="decimal"
                                     data-key="vitamineE"
-                                    placeholder={asInput ? food.vitamineE :food.vitamineE * amount / 100}
+                                    value={asInput ? food.vitamineE :food.vitamineE * amount / 100}
                                     onChange={updateFood}
                                     disabled={!asInput}
                                 />
@@ -515,7 +515,7 @@ const FoodDetails = ({ food, setFood, amount = 100, asInput,showName = true }) =
                                     type="text"
                                     inputMode="decimal"
                                     data-key="vitamineK"
-                                    placeholder={asInput ? food.vitamineK :food.vitamineK * amount / 100}
+                                    value={asInput ? food.vitamineK :food.vitamineK * amount / 100}
                                     onChange={updateFood}
                                     disabled={!asInput}
                                 />

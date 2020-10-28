@@ -8,6 +8,7 @@ import Container from '../../Containers/Container'
 import ContainerChild from '../../Containers/Container/ContainerChild'
 import LayoutContainer from '../../Containers/LayoutContainer'
 import LayoutContainerChild from '../../Containers/LayoutContainer/LayoutContainerChild'
+import Content from '../../Content'
 export const LoginPage = () => {
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
@@ -30,7 +31,7 @@ export const LoginPage = () => {
         }
     }
     return (
-
+        <Content>
         <LayoutContainer>
             <LayoutContainerChild>
                 <Container>
@@ -72,6 +73,7 @@ export const LoginPage = () => {
                 </Container >
             </LayoutContainerChild>
         </LayoutContainer>
+        </Content>
 
 
 

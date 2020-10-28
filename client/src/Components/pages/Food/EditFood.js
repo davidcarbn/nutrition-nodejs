@@ -88,39 +88,43 @@ const EditFood = (props) => {
         </Header>
         <Content>
             <LayoutContainer>
-                <LayoutContainerChild>{
-                    !food ? <Container flexRow alignCenter>Loading...
-
-                    </Container> : (
-                <>
-                <Container>
-                    <LabelInput 
-                        type="number"
-                        inputmode="numeric"
-                        onChange={handleAmountChange}
-                        value={amount}
-                        label="Menge"
-                    />
-                </Container>
-                    
+                <LayoutContainerChild>
                     <Container>
                         <ContainerChild>
-                            <FoodDetails
-                        food={food}
-                        setFood={setFood}
-                        amount={amount}
-                    />
-                    <input className="btn-delete" type="submit" onClick={deleteEntry} value="Eintrag löschen" />
+                            {
+                                !food ? <Container flexRow alignCenter>Loading...
+
+                    </Container> : (
+                                        <>
+                                            <Container>
+                                                <LabelInput
+                                                    type="number"
+                                                    inputmode="numeric"
+                                                    onChange={handleAmountChange}
+                                                    value={amount}
+                                                    label="Menge"
+                                                />
+                                            </Container>
+
+
+
+                                            <FoodDetails
+                                                food={food}
+                                                setFood={setFood}
+                                                amount={amount}
+                                            />
+                                            <input className="btn-delete" type="submit" onClick={deleteEntry} value="Eintrag löschen" />
+
+
+                                        </>
+
+                                    )
+                            }
                         </ContainerChild>
                     </Container>
-                    
-                </>
-
-            )
-        }
                 </LayoutContainerChild>
             </LayoutContainer>
-            </Content></>
+        </Content></>
     )
 }
 export default EditFood

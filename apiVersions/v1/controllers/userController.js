@@ -13,6 +13,8 @@ const createUser = async (req,res,next) => {
             password:hashed,
             roles: ["user"]
         })
+        //dont respond with password
+        user.password = undefined
         res.status(201).json({user})
     } catch (error) {
         console.log(error)

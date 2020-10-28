@@ -18,7 +18,7 @@ const login = async (req,res) => {
         const {email,password} = req.body
         console.log(req.body    )
         // validation
-        const user = await User.findOne({email:email})
+        let user = await User.findOne({email:email})
         console.log(user)
         const match = await compare(password, user.password)
         if (!match) {
@@ -37,6 +37,8 @@ const login = async (req,res) => {
             httpOnly: false,
             secure:  process.env.DEV ? false : true,
         })
+        // dont respond with passwor hash
+        user.password = undefined
         res.status(200).json({user})
     } catch (error) {
         console.log(error)
