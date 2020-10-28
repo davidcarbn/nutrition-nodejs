@@ -1,3 +1,10 @@
+.nutrient-circle-wrapper {
+}
+.nutrient-circle {
+    transform: rotate(90deg);
+    transform-origin: center;
+    transition: stroke-dashoffset 350ms;
+}
 .nutrient {
     flex:1;
     display: flex;

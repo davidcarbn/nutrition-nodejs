@@ -17,6 +17,7 @@ import CustomFood from './Components/pages/Settings/CustomFood'
 import EditCustomFood from './Components/pages/Settings/CustomFood/EditCustomFood'
 import DashboardDetails from './Components/pages/Dashboard/Details';
 import RDA from './Components/pages/Settings/RDA';
+import { RDAProvider, useRDA } from './providers/RDAProvider';
 function App() {
   const { setIsAuthenticated, isAuthenticated, setUser } = useAuth()
   const [appLoading, setAppLoading] = useState(false)
@@ -53,6 +54,9 @@ function App() {
     return (
       <div className="app-layout">
         <DateProvider>
+          <RDAProvider>
+
+          
           <Switch>
             <ProtectedRoute
               exact path='/'
@@ -117,6 +121,7 @@ function App() {
             />
             <Route path='*' component={() => { return <h1>404</h1> }} />
           </Switch>
+          </RDAProvider>
         </DateProvider>
       </div>
     )

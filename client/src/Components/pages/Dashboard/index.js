@@ -12,6 +12,8 @@ import ContainerChild from '../../Containers/Container/ContainerChild'
 import Content from '../../Content'
 import Nutrient from '../../Nutrient'
 import Food from '../../../objects/Food'
+import { useRDA } from '../../../providers/RDAProvider'
+import { Link } from 'react-router-dom'
 const Dashboard = (props) => {
     const { currentDate, setCurrentDate } = useDate()
     const [diary, setDiary] = useState(new Map())
@@ -94,7 +96,23 @@ const Dashboard = (props) => {
         }
 
     }, [currentDate, diary])
-
+    const {rda,setRda} = useRDA()
+    useEffect(() => {
+        const fetchRda = async () => {
+            try {
+                const res = await Axios.request({
+                    url: '/api/v1/rda',
+                    method: 'GET',
+                    baseURL: process.env.REACT_APP_BASE_URL
+                })
+                console.log(res.data)
+                setRda(new Food(res.data))
+            } catch (error) {
+                console.log(error)
+            }
+        }
+        fetchRda()
+      },[])
     const prevDay = (event) => {
 
         event.preventDefault()
@@ -155,13 +173,15 @@ const Dashboard = (props) => {
                             </ContainerChild>
                             <ContainerChild>
                                 <Container flexRow wrap>
-                                    <Nutrient name="Kalorien" amount={foodSum.kcal} unit="kcal" />
+                                    <Nutrient name="Kalorien" amount={foodSum.kcal} unit="kcal" rda={rda.kcal || 0}/>
                                     <Nutrient name="Carbs" amount={foodSum.carbohydrates} unit="g" />
                                     <Nutrient name="Fette" amount={foodSum.fats} unit="g" />
                                     <Nutrient name="Eiweiß" amount={foodSum.protein} unit="g" />
                                 </Container>
                                 <Container flexRow justifyCenter>
-                                    <Button target="/dashboard/details" state={{food:foodSum}}>Alle Nährwerte anzeigen</Button>
+                                    <Link to={{pathname:"/dashboard/details",
+                                        state:{food:foodSum}}}
+                                    >Alle Nährwerte anzeigen</Link>
                                 </Container>
 
 
