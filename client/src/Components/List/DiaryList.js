@@ -39,7 +39,7 @@ const DiaryList = ({ loading, content, title, mealtime, onAdd, onEdit }) => {
                                             <div className="mealtime-list-item-amount">{item.amount}g</div>
                                         </div>
                                         <div>
-                                            {item.food.kcal * item.amount / 100}
+                                            {item.food.kcal * item.amount / 100} kcal
                                         </div>
                                     </button>
                                 </li>

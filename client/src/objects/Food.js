@@ -1,34 +1,34 @@
 
 class Food {
     constructor(food = {}) {
-            this.name = food.name || ""
-            this.kcal = food.kcal || ""
-            this.carbohydrates = food.carbohydrates || ""
-            this.sugar = food.sugar || ""
-            this.fiber = food.fiber || ""
-            this.protein = food.protein || ""
-            this.fats = food.fats || ""
-            this.saturatedFats = food.saturatedFats || ""
-            this.transFats = food.transFats || ""
-            this.polyunsaturatedFats = food.polyunsaturatedFats || ""
-            this.monounsaturatedFats = food.monounsaturatedFats || ""
-            this.potassium = food.potassium || ""
-            this.phosphate = food.phosphate || ""
-            this.calcium = food.calcium || ""
-            this.sodium = food.sodium || ""
-            this.vitamineA = food.vitamineA || ""
-            this.vitamineB1 = food.vitamineB1 || ""
-            this.vitamineB2 = food.vitamineB2 || ""
-            this.vitamineB3 = food.vitamineB3 || ""
-            this.vitamineB5 = food.vitamineB5 || ""
-            this.vitamineB6 = food.vitamineB6 || ""
-            this.vitamineB7 = food.vitamineB7 || ""
-            this.vitamineB9 = food.vitamineB9 || ""
-            this.vitamineB12 = food.vitamineB12 || ""
-            this.vitamineC = food.vitamineC || ""
-            this.vitamineD = food.vitamineD || ""
-            this.vitamineE = food.vitamineE || ""
-            this.vitamineK = food.vitamineK || ""
+            this.name = food.name || null
+            this.kcal = food.kcal || null
+            this.carbohydrates = food.carbohydrates || null
+            this.sugar = food.sugar || null
+            this.fiber = food.fiber || null
+            this.protein = food.protein || null
+            this.fats = food.fats || null
+            this.saturatedFats = food.saturatedFats || null
+            this.transFats = food.transFats || null
+            this.polyunsaturatedFats = food.polyunsaturatedFats || null
+            this.monounsaturatedFats = food.monounsaturatedFats || null
+            this.potassium = food.potassium || null
+            this.phosphate = food.phosphate || null
+            this.calcium = food.calcium || null
+            this.sodium = food.sodium || null
+            this.vitamineA = food.vitamineA || null
+            this.vitamineB1 = food.vitamineB1 || null
+            this.vitamineB2 = food.vitamineB2 || null
+            this.vitamineB3 = food.vitamineB3 || null
+            this.vitamineB5 = food.vitamineB5 || null
+            this.vitamineB6 = food.vitamineB6 || null
+            this.vitamineB7 = food.vitamineB7 || null
+            this.vitamineB9 = food.vitamineB9 || null
+            this.vitamineB12 = food.vitamineB12 || null
+            this.vitamineC = food.vitamineC || null
+            this.vitamineD = food.vitamineD || null
+            this.vitamineE = food.vitamineE || null
+            this.vitamineK = food.vitamineK || null
         
     }
     /*set(key,value) {

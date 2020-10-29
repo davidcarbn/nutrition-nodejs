@@ -32,7 +32,7 @@ const Dashboard = (props) => {
             "vitamineB7","vitamineB9","vitamineB12","vitamineC","vitamineD","vitamineE","vitamineK"]
         const sum = allFood.reduce((prev, cur) => {
             FoodProps.forEach((prop) => {
-                prev[prop] += (cur.food[prop] * cur.amount / 100)
+                prev[prop] += cur.food[prop] * cur.amount / 100
             })
             return prev
         }, new Food())
