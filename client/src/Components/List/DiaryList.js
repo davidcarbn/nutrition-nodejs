@@ -19,8 +19,8 @@ const DiaryList = ({ loading, content, title, mealtime, onAdd, onEdit }) => {
             <Container>
                 <ul className="mealtime-list">{
                     loading ? (
-                        <li className="mealtime-list-item">
-                            <button>
+                        <li>
+                            <button className="mealtime-list-item">
                                 <div>
                                     <div className="mealtime-name-placeholder placeholder"></div>
                                     <div className="mealtime-amount-placeholder placeholder"></div>
@@ -32,8 +32,8 @@ const DiaryList = ({ loading, content, title, mealtime, onAdd, onEdit }) => {
                         </li>
                     ) : (
                             content.length ? content.map((item,idx) => (
-                                <li key={idx} className="mealtime-list-item">
-                                    <button onClick={onEdit} data-mealtime={mealtime} data-amount={item.amount} data-foodid={item.food._id} data-entryid={item._id}>
+                                <li key={idx}>
+                                    <button className="mealtime-list-item" onClick={onEdit} data-mealtime={mealtime} data-amount={item.amount} data-foodid={item.food._id} data-entryid={item._id}>
                                         <div>
                                             <div className="mealtime-list-item-name">{item.food.name}</div>
                                             <div className="mealtime-list-item-amount">{item.amount}g</div>

@@ -7,7 +7,7 @@
     list-style: none;
     margin: 10px 0 0 0;
 }
-.mealtime-list-item button {
+.mealtime-list-item {
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -15,11 +15,12 @@
     background: transparent;
     border: none;
     padding: 5px 0;
+    font-size:1em;
 }
 .mealtime-list-item-name {
     text-align: start;
     font-weight: 600;
-    font-size: 1.25em;
+    font-size: 1.125em;
     color: #3e3f49;
 }
 
