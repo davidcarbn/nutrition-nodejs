@@ -11,7 +11,6 @@ import LayoutContainerChild from '../../Containers/LayoutContainer/LayoutContain
 import ContainerChild from '../../Containers/Container/ContainerChild'
 
 const Search = (props) => {
-    console.log('search', props.location.state.mealtime)
     const [result, setResult] = useState([])
     const [result2, setResult2] = useState([])
     const [search, setSearch] = useState("")

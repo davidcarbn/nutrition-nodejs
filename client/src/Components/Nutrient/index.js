@@ -2,7 +2,7 @@ import React from 'react'
 import './Nutrient.css'
 
 const Nutrient = ({ name, unit, amount, rda }) => {
-    const percentage = amount / rda || 0
+    const percentage = Math.min(amount / rda,1) || 0
     const circumference = (2.2 * 2 * Math.PI)
     const strokeDashoffset = circumference - percentage * circumference
     console.log("per", percentage)
@@ -16,7 +16,7 @@ const Nutrient = ({ name, unit, amount, rda }) => {
             <div className="nutrient-info">
                 <div>
                     <div className="nutrient-amount">
-                        {parseInt(amount)}
+                        {Math.round(amount)}
                     </div>
                     <div className="nutrient-unit">
                         {unit}
