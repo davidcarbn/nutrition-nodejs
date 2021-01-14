@@ -34,7 +34,7 @@ const insertDiaryEntry = async (req, res) => {
         }
         */
         const { entry } = req.body
-        console.log(entry)
+        
         const diaryEntry = await Diary.findOneAndUpdate({
             user: id,
             date: date
@@ -55,6 +55,7 @@ const deleteDiaryEntry = async (req, res) => {
     try {
         const userId = req.user.id
         const {date,mealtime,id} = req.params
+        console.log("user: ",userId,date,mealtime,id)
         let query = {
             user:userId,
             date:date
@@ -65,6 +66,7 @@ const deleteDiaryEntry = async (req, res) => {
             }
         }
         const diary =  await Diary.updateOne(query,updateContent)
+        console.log(diary)
         res.json({diary})
     } catch (error) {
         console.log(error)

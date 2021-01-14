@@ -56,7 +56,7 @@ const EditFood = (props) => {
             console.log(error)
         }
     }
-    const deleteEntry = async () => {
+    const deleteEntry = async (e) => {
         try {
             const res = await Axios.request({
                 method: "DELETE",
@@ -105,9 +105,6 @@ const EditFood = (props) => {
                                                     label="Menge"
                                                 />
                                             </Container>
-
-
-
                                             <FoodDetails
                                                 food={food}
                                                 setFood={setFood}
