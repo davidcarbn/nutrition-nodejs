@@ -173,9 +173,8 @@ const Dashboard = (props) => {
                             <ContainerChild>
                                 <Container flexRow wrap>
                                     <Nutrient name="Kalorien" amount={foodSum.kcal || 0} unit="kcal" rda={rda.kcal || 0} />
-                                    <Nutrient name="Carbs" amount={foodSum.carbohydrates || 0} unit="g" rda={rda.carbohydrates || 0} />
-                                    <Nutrient name="Fette" amount={foodSum.fats || 0} unit="g" rda={rda.fats || 0} />
-                                    <Nutrient name="Eiweiß" amount={foodSum.protein || 0} unit="g" rda={rda.protein || 0} />
+                                    <Nutrient name="Kalium" amount={foodSum.potassium || 0} unit="mg" rda={rda.potassium || 0} />
+                                    <Nutrient name="Phosphat" amount={foodSum.phosphate || 0} unit="mg" rda={rda.phosphate || 0} />
                                 </Container>
                                 <Container flexRow justifyCenter>
                                     <Link

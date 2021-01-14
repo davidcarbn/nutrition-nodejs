@@ -16,7 +16,7 @@ const Nutrient = ({ name, unit, amount, rda }) => {
             <div className="nutrient-info">
                 <div>
                     <div className="nutrient-amount">
-                        {amount}
+                        {parseInt(amount)}
                     </div>
                     <div className="nutrient-unit">
                         {unit}

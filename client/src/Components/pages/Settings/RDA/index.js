@@ -29,7 +29,20 @@ const RDA = props => {
         fetchRDA()
     },[])
 
-    const handleSubmit = () => {}
+    const handleSubmit = async () => {
+        try {
+            const res = await Axios.request({
+                url: '/api/v1/rda',
+                method: 'PUT',
+                baseURL: process.env.REACT_APP_BASE_URL,
+                data: food
+            })
+            console.log(res.data)
+            props.history.push('/settings/')
+        } catch (error) {
+            console.log(error)
+        }
+    }
     return (
         <>
             <Header>
