@@ -78,14 +78,14 @@ const Search = (props) => {
                                     {result2.length ?
                                         result2.map((listItem) => (
                                             <li>
-                                                <button data-foodid={listItem._id} onClick={redirectToFood}>
+                                                <div data-foodid={listItem._id} onClick={redirectToFood}>
                                                     <div>
                                                         <div>{listItem.name}</div>
                                                     </div>
                                                     <div>
                                                         {listItem.kcal} kcal
                                                     </div>
-                                                </button>
+                                                </div>
                                             </li>
                                         )) : <div className="no-result">Kein Ergebnis</div>
                                     }
