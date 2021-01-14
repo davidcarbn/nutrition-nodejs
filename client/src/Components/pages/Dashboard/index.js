@@ -136,7 +136,7 @@ const Dashboard = (props) => {
                 amount: event.currentTarget.dataset.amount,
                 foodId: event.currentTarget.dataset.foodid,
                 entryId: event.currentTarget.dataset.entryid,
-                mealtime: event.target.dataset.mealtime
+                mealtime: event.currentTarget.dataset.mealtime
             }
         })
     }
