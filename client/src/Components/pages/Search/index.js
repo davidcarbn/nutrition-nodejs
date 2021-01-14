@@ -56,20 +56,20 @@ const Search = (props) => {
                         <path d="M149.076,42.925l-5.6,5.6,5.6,5.6" transform="translate(-142.061 -41.511)" fill="none" stroke="#343540" stroke-linecap="round" stroke-width="2" />
                     </svg>
                 </Button>
+                <LabelInput
+                                    type="text"
+                                    label=""
+                                    placeholder="Suchen..."
+                                    onChange={searchFood}
+                                    value={search}
+                                />
+                <div></div>
             </Header>
             <Content>
                 <LayoutContainer>
                     <LayoutContainerChild>
                         <Container>
-                            <ContainerChild>
-                                <LabelInput
-                                    type="text"
-                                    label="Suche"
-                                    placeholder="Suchen..."
-                                    onChange={searchFood}
-                                    value={search}
-                                />
-                            </ContainerChild>
+                            
                             <ContainerChild>
                                 <ul className="search-result">
                                     <div className="result-heading">
