@@ -43,6 +43,7 @@ const CustomFood = (props) => {
                 </Button>
                 <LabelInput
                     label={false}
+                    placeholder="Suchen..."
                     onChange={e => setSearchTerm(e.currentTarget.value)}
                     value={searchTerm}
                     />
