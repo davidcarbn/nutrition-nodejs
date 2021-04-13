@@ -6,6 +6,8 @@ const userController = express.Router()
 const createUser = async (req,res,next) => {
     try {
         const {email,password} = req.body
+        
+        // Validation
         if (!password || !email) throw new Error()
         const hashed = await hash(password,10)
         const user = await User.create({
