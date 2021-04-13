@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Container from '../Containers/Container'
 import Button from '../Header/Button'
 import './DiaryList.css'
 const DiaryList = ({ loading, content, title, mealtime, onAdd, onEdit }) => {
+    const [cont,setContent] = useState(content)
+    console.log("content",content)
     return (
         <Container>
             <Container flexRow alignCenter spaceBetween>
@@ -33,7 +35,7 @@ const DiaryList = ({ loading, content, title, mealtime, onAdd, onEdit }) => {
                     ) : (
                             content.length ? content.map((item,idx) => (
                                 <li key={idx}>
-                                    <button className="mealtime-list-item" onClick={onEdit} data-mealtime={mealtime} data-amount={item.amount} data-foodid={item.food._id} data-entryid={item._id}>
+                                    <button className="mealtime-list-item" onClick={onEdit} data-mealtime={mealtime} data-amount={item.amount} data-foodid={item.food && item.food._id} data-entryid={item._id}>
                                         <div>
                                             <div className="mealtime-list-item-name">{item.food.name}</div>
                                             <div className="mealtime-list-item-amount">{item.amount}g</div>

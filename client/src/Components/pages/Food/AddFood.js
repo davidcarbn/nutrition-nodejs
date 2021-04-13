@@ -17,7 +17,7 @@ const AddFood = (props) => {
     const { currentDate } = useDate()
     const [food, setFood] = useState(new Food())
     const [amount, setAmount] = useState(props.location.state.amount || 100)
-    const [foodID, setFoodID] = useState(null)
+    console.log("init",props.location.state.foodId,amount)
     useEffect(() => {
         const fetchFood = async () => {
             try {
@@ -26,8 +26,7 @@ const AddFood = (props) => {
                     baseURL: process.env.REACT_APP_BASE_URL
                 })
                 setFood(new Food(res.data.food))
-                console.log(res.data)
-                setFoodID(res.data.food._id)
+                console.log("fetch",res.data)
             } catch (error) {
                 console.log(error)
             }
@@ -37,8 +36,19 @@ const AddFood = (props) => {
     const handleAmountChange = (e) => {
         setAmount(e.target.value)
     }
-    const handleAdd = async () => {
+    const [loading,setLoading] = useState(false)
+    const handleAdd = async (e) => {
         try {
+            console.log({
+                entry: {
+                    [props.location.state.mealtime]: {
+                        food: props.location.state.foodId,
+                        amount
+                    }
+                }
+            })
+            setLoading(true)
+            console.log(props.location.state.foodId,amount)
             const res = await Axios.request({
                 url: '/api/v1/diary/' + currentDate,
                 method: "POST",
@@ -46,12 +56,13 @@ const AddFood = (props) => {
                 data: {
                     entry: {
                         [props.location.state.mealtime]: {
-                            food: foodID,
+                            food: props.location.state.foodId,
                             amount
                         }
                     }
                 }
             })
+            setLoading(false)
             props.history.push({
                 pathname: '/dashboard',
                 state: {
@@ -70,11 +81,13 @@ const AddFood = (props) => {
                         <path d="M149.076,42.925l-5.6,5.6,5.6,5.6" transform="translate(-142.061 -41.511)" fill="none" stroke="#343540" stroke-linecap="round" stroke-width="2" />
                     </svg>
                 </Button>
-                <Button handleSubmit={handleAdd}>
-                    <div className="save">
-                        Speichern
-                    </div>
-                </Button>
+                {!loading ? (
+                    <Button handleSubmit={handleAdd}>
+                        <div className="save">
+                            Speichern
+                        </div>
+                    </Button>
+                ) : "Loading"}
             </Header>
             <Content>
                 <LayoutContainer>

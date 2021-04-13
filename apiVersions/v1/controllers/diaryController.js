@@ -12,7 +12,7 @@ const getDiaryEntry = async (req, res) => {
             .populate({path:'lunch',populate: {path:'food'}})
             .populate({path:'dinner',populate: {path:'food'}})
             .populate({path:'snacks',populate: {path:'food'}})
-            
+        console.log(diaryEntry)
         res.status(200).json({diaryEntry})
     } catch (error) {
         res.status(500).json({error})
@@ -34,7 +34,29 @@ const insertDiaryEntry = async (req, res) => {
         }
         */
         const { entry } = req.body
-        
+        const  {breakfast, dinner,lunch,snacks} = entry
+        // not that elegant
+        if (!breakfast && !dinner && !lunch && !snacks) {
+            res.status(400).json({error: "Missing Arguments"})
+            return
+        }
+        if (breakfast && (!breakfast.food || !breakfast.amount)) {
+            res.status(400).json({error: "Missing Arguments"})
+            return
+        }
+        if (dinner && (!dinner.food || !dinner.amount)) {
+            res.status(400).json({error: "Missing Arguments"})
+            return
+        }
+        if (lunch && (!lunch.food || !lunch.amount)) {
+            res.status(400).json({error: "Missing Arguments"})
+            return
+        }
+        if (snacks && (!snacks.food || !snacks.amount)) {
+            res.status(400).json({error: "Missing Arguments"})
+            return
+        }
+       
         const diaryEntry = await Diary.findOneAndUpdate({
             user: id,
             date: date
@@ -55,7 +77,7 @@ const deleteDiaryEntry = async (req, res) => {
     try {
         const userId = req.user.id
         const {date,mealtime,id} = req.params
-        console.log("user: ",userId,date,mealtime,id)
+        
         let query = {
             user:userId,
             date:date
@@ -66,7 +88,6 @@ const deleteDiaryEntry = async (req, res) => {
             }
         }
         const diary =  await Diary.updateOne(query,updateContent)
-        console.log(diary)
         res.json({diary})
     } catch (error) {
         console.log(error)
