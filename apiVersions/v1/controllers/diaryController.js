@@ -21,21 +21,19 @@ const getDiaryEntry = async (req, res) => {
 const insertDiaryEntry = async (req, res) => {
     try {
         const { id } = req.user
-        const {date} = req.params
-        /*
-        {
-            date: date,
-            food: {
-                breakfast: {
-                    ObjectID: objID,
-                    amount: amt
-                }
+        const { date } = req.params
+        const { entry } = req.body
+        
+        /* Validation:
+        entry: {
+            dinner / breakfast / lunch / snacks: {
+                food:
+                amount:
             }
         }
         */
-        const { entry } = req.body
-        const  {breakfast, dinner,lunch,snacks} = entry
-        // not that elegant
+       
+        const  { breakfast, dinner, lunch, snacks } = entry
         if (!breakfast && !dinner && !lunch && !snacks) {
             res.status(400).json({error: "Missing Arguments"})
             return
