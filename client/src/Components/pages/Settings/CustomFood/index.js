@@ -64,7 +64,7 @@ const CustomFood = (props) => {
                                 <ButtonList 
                                     items={
                                         foodList
-                                            .filter((food) => (food.name.includes(searchTerm)))
+                                            .filter((food) => (food.name.toLowerCase().includes(searchTerm.toLowerCase())))
                                             .sort((a,b) => {
                                                 if (a.name < b.name) return -1
                                                 if (a.name > b.name) return 1
