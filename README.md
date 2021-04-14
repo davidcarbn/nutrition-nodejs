@@ -10,6 +10,6 @@ Clone the repo and do the following steps:
 - create a mongodb atlas database
 - create a heroku app
 - setup environemnt variables: MONGO_URI= ... JWT_SECRET= ... (for the dev environemnt you can use dotEnv to provide the environemnt variables)
-- At the moment you need to call **POST https://<yourdomain>/api/v1/user** with **email** and **password** in the body to create a user
+- At the moment you need to call **POST https://yourdomain.com/api/v1/user** with **email** and **password** in the body to create a user
 - now you can log in to your nutrition tracking app.
 
