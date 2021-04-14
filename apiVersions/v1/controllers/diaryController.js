@@ -39,6 +39,9 @@ const insertDiaryEntry = async (req, res) => {
         }
         */
         if (!date || !isDate(new Date(date))) {
+            console.log("test")
+            console.log(date,new Date(date))
+            console.log(isDate(new Date(date)))
             res.status(400).json({error: "missing or wromg arguments"})
             return
         }
@@ -116,6 +119,7 @@ const updateDiaryEntry = async (req,res) => {
         const {date,mealtime,id} = req.params
         const {amount} = req.body
         //validation
+        console.log(date,mealtime,id)
         if (!date || !isDate(new Date(date)) || !mealtime || typeof mealtime !== "string" || !id || !isMongoId(id)) {
             res.status(400).json({error: "missing or wrong arguments"})
             return
@@ -124,7 +128,8 @@ const updateDiaryEntry = async (req,res) => {
             res.status(400).json({error: "missing or wrong arguments"})
             return
         }
-        if (!amount || typeof amount !== "number") {
+        // +amount turns a string into a number or in NaN if string contains something else
+        if (!amount || isNaN(+amount)) {
             res.status(400).json({error: "missing or wrong arguments"})
             return
         }

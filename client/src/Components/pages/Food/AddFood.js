@@ -49,8 +49,9 @@ const AddFood = (props) => {
             })
             setLoading(true)
             console.log(props.location.state.foodId,amount)
+            console.log(currentDate,new Date(currentDate).toISOString())
             const res = await Axios.request({
-                url: '/api/v1/diary/' + currentDate,
+                url: '/api/v1/diary/' + new Date(currentDate).toISOString(),
                 method: "POST",
                 baseURL: process.env.REACT_APP_BASE_URL,
                 data: {

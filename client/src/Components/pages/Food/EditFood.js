@@ -39,7 +39,7 @@ const EditFood = (props) => {
     const handleSave = async () => {
         try {
             const res = await Axios.request({
-                url: '/api/v1/diary/' + currentDate + '/' + props.location.state.mealtime + '/' + props.location.state.entryId,
+                url: '/api/v1/diary/' + new Date(currentDate).toISOString() + '/' + props.location.state.mealtime + '/' + props.location.state.entryId,
                 method: "PUT",
                 baseURL: process.env.REACT_APP_BASE_URL,
                 data: {
@@ -60,7 +60,7 @@ const EditFood = (props) => {
         try {
             const res = await Axios.request({
                 method: "DELETE",
-                url: '/api/v1/diary/' + currentDate + '/' + props.location.state.mealtime + '/' + props.location.state.entryId,
+                url: '/api/v1/diary/' + new Date(currentDate).toISOString() + '/' + props.location.state.mealtime + '/' + props.location.state.entryId,
                 baseURL: process.env.REACT_APP_BASE_URL
             })
             props.history.push({
