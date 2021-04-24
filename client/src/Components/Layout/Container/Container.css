@@ -1,7 +1,10 @@
 .container {
     width:100%;
-    margin:0 auto;
+    margin:1rem auto;
+    background:white;
+    padding:1rem 1.5rem;
 }
+
 .flex-row {
     display: -webkit-flex;
     display:flex;
@@ -23,4 +26,10 @@
 }
 .wrap {
     flex-wrap: wrap;
+}
+.no-padding {
+    padding:0;
+}
+.no-margin {
+    margin:0;
 }

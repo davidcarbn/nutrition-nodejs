@@ -4,7 +4,8 @@
 }
 .nutrition-list {
     list-style: none;
-    padding:0; 
+    padding:0;
+    margin:0; 
 }
 .nutrition-nutrient {
     font-size:1em;

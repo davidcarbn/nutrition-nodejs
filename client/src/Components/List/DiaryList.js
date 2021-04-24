@@ -3,11 +3,10 @@ import Container from '../Containers/Container'
 import Button from '../Header/Button'
 import './DiaryList.css'
 const DiaryList = ({ loading, content, title, mealtime, onAdd, onEdit }) => {
-    const [cont,setContent] = useState(content)
     console.log("content",content)
     return (
-        <Container>
-            <Container flexRow alignCenter spaceBetween>
+        <>
+            <Container flexRow alignCenter spaceBetween noSpacing>
                 <div className="mealtime-heading">{title}</div>
                 <Button target="/food/search" state={{mealtime}}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14">
@@ -18,7 +17,7 @@ const DiaryList = ({ loading, content, title, mealtime, onAdd, onEdit }) => {
                     </svg>
                 </Button>
             </Container>
-            <Container>
+            <Container noSpacing>
                 <ul className="mealtime-list">{
                     loading ? (
                         <li>
@@ -50,7 +49,7 @@ const DiaryList = ({ loading, content, title, mealtime, onAdd, onEdit }) => {
                 }
                 </ul>
             </Container>
-        </Container>
+        </>
     )
 }
 export default DiaryList
