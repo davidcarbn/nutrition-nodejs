@@ -4,10 +4,10 @@ import { useDate } from "../../../providers/DateContext";
 import Header from "../../Layout/Header";
 import Button from "../../Layout/Header/Button";
 import FoodDetails from "../../Food/FoodDetails";
-import Container from "../../Containers/Container";
+import Container from "../../Layout/Container";
 import Food from "../../../objects/Food";
 import LabelInput from "../../Input/LabelInput";
-import Content from "../../Content";
+import Content from "../../Layout/Content";
 
 
 const AddFood = (props) => {

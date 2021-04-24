@@ -1,9 +1,9 @@
 import Axios from "axios";
 import React, { useEffect, useState } from "react";
-import Container from "../../../Containers/Container";
-import Content from "../../../Content";
-import Header from "../../../Header";
-import Button from "../../../Header/Button";
+import Container from "../../../Layout/Container";
+import Content from "../../../Layout/Content";
+import Header from "../../../Layout/Header";
+import Button from "../../../Layout/Header/Button";
 import LabelInput from "../../../Input/LabelInput";
 import ButtonList from "../../../List/ButtonList";
 

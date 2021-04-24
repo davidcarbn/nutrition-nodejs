@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import Container from '../Containers/Container'
-import Button from '../Header/Button'
+import Container from '../Layout/Container'
+import Button from '../Layout/Header/Button'
 import './DiaryList.css'
 const DiaryList = ({ loading, content, title, mealtime, onAdd, onEdit }) => {
     console.log("content",content)

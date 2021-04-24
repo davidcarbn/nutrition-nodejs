@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import Axios from "axios";
 import "./Search.css";
-import Header from "../../Header";
-import Container from "../../Containers/Container";
-import Button from "../../Header/Button";
+import Header from "../../Layout/Header";
+import Container from "../../Layout/Container";
+import Button from "../../Layout/Header/Button";
 import LabelInput from "../../Input/LabelInput";
-import Content from "../../Content";
+import Content from "../../Layout/Content";
 
 const Search = (props) => {
   const [result, setResult] = useState([]);

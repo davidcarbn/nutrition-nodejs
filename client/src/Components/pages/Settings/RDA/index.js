@@ -1,11 +1,11 @@
 import Axios from "axios";
 import React, { useEffect, useState } from "react";
 import Food from "../../../../objects/Food";
-import Container from "../../../Containers/Container";
-import Content from "../../../Content";
+import Container from "../../../Layout/Container";
+import Content from "../../../Layout/Content";
 import FoodDetails from "../../../Food/FoodDetails";
-import Header from "../../../Header";
-import Button from "../../../Header/Button";
+import Header from "../../../Layout/Header";
+import Button from "../../../Layout/Header/Button";
 
 const RDA = (props) => {
   const [food, setFood] = useState(new Food());

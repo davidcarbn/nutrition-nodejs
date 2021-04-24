@@ -3,13 +3,13 @@ import React, { useState, useEffect } from "react";
 import Axios from "axios";
 import { useDate } from "../../../providers/DateContext";
 import FoodDetails from "../../Food/FoodDetails";
-import Header from "../../Header";
-import Button from "../../Header/Button";
+import Header from "../../Layout/Header";
+import Button from "../../Layout/Header/Button";
 import "./EditFood.css";
 import Food from "../../../objects/Food";
 import LabelInput from "../../Input/LabelInput";
-import Container from "../../Containers/Container";
-import Content from "../../Content";
+import Container from "../../Layout/Container";
+import Content from "../../Layout/Content";
 
 const EditFood = (props) => {
   const { currentDate } = useDate();

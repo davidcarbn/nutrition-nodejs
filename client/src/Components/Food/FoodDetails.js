@@ -1,5 +1,5 @@
 import React from "react";
-import Container from "../Containers/Container";
+import Container from "../Layout/Container";
 import LabelInput from "../Input/LabelInput";
 import "./FoodDetails.css";
 

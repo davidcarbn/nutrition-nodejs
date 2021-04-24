@@ -1,12 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./Dashboard.css";
-import Header from "../../Header";
+import Header from "../../Layout/Header";
 import Axios from "axios";
 import DiaryList from "../../List/DiaryList";
-import Button from "../../../Components/Header/Button";
+import Button from "../../../Components/Layout/Header/Button";
 import { useDate } from "../../../providers/DateContext";
-import Container from "../../Containers/Container";
-import Content from "../../Content";
+import Container from "../../Layout/Container";
+import Content from "../../Layout/Content";
 import Nutrient from "../../Nutrient";
 import Food from "../../../objects/Food";
 import { useRDA } from "../../../providers/RDAProvider";

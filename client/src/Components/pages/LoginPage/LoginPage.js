@@ -4,8 +4,8 @@ import { Link, useHistory } from "react-router-dom";
 import { useAuth } from "../../../providers/AuthContext";
 import Axios from "axios";
 import LabelInput from "../../Input/LabelInput";
-import Container from "../../Containers/Container";
-import Content from "../../Content";
+import Container from "../../Layout/Container";
+import Content from "../../Layout/Content";
 export const LoginPage = () => {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
