@@ -6,6 +6,8 @@ import Axios from "axios";
 import LabelInput from "../../Input/LabelInput";
 import Container from "../../Layout/Container";
 import Content from "../../Layout/Content";
+import Header from "../../Layout/Header";
+import Nutrient from "../../Nutrient/";
 export const LoginPage = () => {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
@@ -29,12 +31,24 @@ export const LoginPage = () => {
   };
   return (
     <Content>
-      <Container>
-        <Container flexCol alignCenter>
+      <div class="login-app-preview">
+        <Header>
+          <div style={{ fontWeight: "bold", paddingLeft: "16px" }}>Kalium</div>
+        </Header>
+        <Container flexRow wrap>
+          <Nutrient name="Kalorien" unit="kcal" amount="4242" rda="6666" />
+          <Nutrient name="Carbs" unit="g" amount="150" rda="300" />
+          <Nutrient name="Proteine" unit="g" amount="75" rda="120" />
+        </Container>
+      </div>
+      <div class="login-drop-shadow">
+
+      <Container noMargin>
+        <Container flexCol alignCenter noSpacing>
           <h1 className="login-heading">Anmelden</h1>
           <p className="login-p">Gebe deine Nutzerdaten an</p>
         </Container>
-        <form>
+        <form class="login-form">
           <LabelInput
             label="E-Mail"
             id="email"
@@ -56,7 +70,7 @@ export const LoginPage = () => {
           <Link className="login-links" to="/forgotpassword">
             Passwort vergessen?
           </Link>
-          <Container flexCol alignCenter>
+          <Container flexCol alignCenter noSpacing>
             <input
               className="login-button"
               type="submit"
@@ -70,6 +84,7 @@ export const LoginPage = () => {
           </Container>
         </form>
       </Container>
+      </div>
     </Content>
   );
 };
