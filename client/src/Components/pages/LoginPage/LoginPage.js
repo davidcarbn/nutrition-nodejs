@@ -39,6 +39,7 @@ export const LoginPage = () => {
           <Nutrient name="Kalorien" unit="kcal" amount="4242" rda="6666" />
           <Nutrient name="Carbs" unit="g" amount="150" rda="300" />
           <Nutrient name="Proteine" unit="g" amount="75" rda="120" />
+          <Nutrient name="Fette" unit="g" amount="53" rda="80" />
         </Container>
       </div>
       <div class="login-drop-shadow">

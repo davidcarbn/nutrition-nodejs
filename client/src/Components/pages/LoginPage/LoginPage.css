@@ -35,7 +35,7 @@
 .login-app-preview {
     box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
     margin:0 auto;
-    width:80%;
+    width:max(350px,50vw);
     background:rgb(249, 249, 249);
     overflow: hidden;   
 }

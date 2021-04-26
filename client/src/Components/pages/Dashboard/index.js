@@ -229,7 +229,7 @@ const Dashboard = (props) => {
       </Header>
       <Content>
           <Container>
-            <Container flexRow wrap noSpacing>
+            <Container flexRow spaceBetween wrap noSpacing>
               <Nutrient
                 name="Kalorien"
                 amount={foodSum.kcal || 0}
