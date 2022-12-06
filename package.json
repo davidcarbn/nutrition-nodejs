@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "engines": {
+    "18.x"
+  },
   "scripts": {
     "start": "node -r esm index.js",
     "dev": "nodemon -r esm -r dotenv/config index.js",
